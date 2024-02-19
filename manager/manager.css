@@ -3,11 +3,17 @@
     padding: 0px;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background-color: #1E1E1E;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 nav {
@@ -15,6 +21,7 @@ nav {
     justify-content: space-around;
     align-content: baseline;
     padding: 1.5em;
+    flex: 0 1 auto;
 }
 
 nav h1 {
@@ -27,7 +34,24 @@ nav ul {
 
 nav ul li {
     display: inline;
-    padding: 0 1em;
+    padding: 0.5em;
+    margin: 0 1em;
+}
+
+#active {
+    font-weight: 600;
+    position: relative;
+}
+
+#active::after {
+    content: '';
+    top: 35px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    background-color: #3C3C3D;
+    height: 6px;
+    border-radius: 10px;    
 }
 
 .nav-link {
@@ -46,19 +70,12 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    height: 100%;
     gap: 1em;
-    margin: 1em;
+    margin: 0em 1em 1em;
+    flex: 1 1 auto;
 }
 
 main > section {
     background-color: #3C3C3D;
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    align-items: stretch;
-}
-
-main > section > div {
-    flex: 1 1 auto;
+    border-radius: 1em;
 }
