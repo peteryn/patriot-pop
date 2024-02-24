@@ -152,7 +152,43 @@ td {
 
 .dj-card-song-list {
     flex: 1 1 auto;
-    display: flex;
+    display: grid;
+    flex-flow: row;
     justify-content: space-evenly;
+    margin: 10px;
+    overflow-y: scroll;
+    grid-template-rows: 1fr 1fr 1fr auto auto;
+    grid-template-columns: 1fr;
+    height: 120px;
+    gap: 0.5em
 }
 
+.dj-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.song-alt {
+    background-color: var(--fg-color);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: start;
+}
+
+.song-alt img {
+    height: 2rem; 
+    margin-right: 10px;
+}
+
+.dj-info img {
+    height: 40px;
+}
+
+.dj-song-box {
+    display: grid;
+}
