@@ -74,6 +74,7 @@ main {
     gap: 1em;
     margin: 0em 1em 1em;
     flex: 1 1 auto;
+    height: 100%;
 }
 
 main > section {

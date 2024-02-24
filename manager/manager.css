@@ -7,15 +7,22 @@
 #header {
     text-align: center;
     padding: 1em 0px;
+    width: 100%;
+    border-bottom: 5px solid var(--bg-color);
 }
 
 #producer-not-player {
     text-align: left;
 }
 
+#producer-dj {
+    border-bottom: none;
+}
+
 .report-section {
     width: 100%;
     border-bottom: 5px solid var(--bg-color);
+    text-align: left;
 }
 
 .report-section h3 {
@@ -23,24 +30,38 @@
 }
 
 .song-box {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     display: grid;
-    grid-auto-flow: column;
+    /* grid-auto-flow: column; */
     gap: 0.5em 1em;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr auto auto auto auto;
+    /* grid-template-rows: repeat(5, minmax(0, 1fr)); */
     grid-template-columns: 1fr 1fr 1fr;
     margin: 1em;
+    overflow-y: scroll;
+    height: 200px;
 }
 
 .song {
     background-color: var(--bg-color);
-    display: flex;
     padding: 10px;
     border-radius: 8px;
-    justify-content: center;
-    height: auto;
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: start;
 }
 
 .song img {
+    height: 2rem; 
+    margin-right: 10px;
+}
 
+.song-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
 }
