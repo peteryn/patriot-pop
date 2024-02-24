@@ -1,0 +1,46 @@
+#left {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#header {
+    text-align: center;
+    padding: 1em 0px;
+}
+
+#producer-not-player {
+    text-align: left;
+}
+
+.report-section {
+    width: 100%;
+    border-bottom: 5px solid var(--bg-color);
+}
+
+.report-section h3 {
+    margin: 1em;
+}
+
+.song-box {
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.5em 1em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1em;
+}
+
+.song {
+    background-color: var(--bg-color);
+    display: flex;
+    padding: 10px;
+    border-radius: 8px;
+    justify-content: center;
+    height: auto;
+}
+
+.song img {
+
+}
