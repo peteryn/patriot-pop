@@ -78,7 +78,35 @@
     text-align: center;
 }
 
+.top-menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.top-menu > button {
+    padding: 0;
+    margin: 0;
+}
+
+.add-dj {
+    margin: 0.5em;
+    margin-right: 1em;
+}
+
+.add-dj button {
+    padding: 0.2em 1em;
+    background-color: #69C863;
+    border: none;
+    color: white;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
 .date-menu {
+    flex: 1 1 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -215,4 +243,10 @@ td {
 
 .dj-song-box {
     display: grid;
+}
+
+
+
+.modal {
+    
 }
