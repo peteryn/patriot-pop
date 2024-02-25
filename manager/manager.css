@@ -8,7 +8,7 @@
     text-align: center;
     padding: 1em 0px;
     width: 100%;
-    border-bottom: 5px solid var(--bg-color);
+    border-bottom: 4px solid var(--bg-color);
 }
 
 #producer-not-player {
@@ -33,7 +33,7 @@
 
 .report-section {
     width: 100%;
-    border-bottom: 5px solid var(--bg-color);
+    border-bottom: 4px solid var(--bg-color);
     text-align: left;
 }
 
@@ -95,6 +95,12 @@
 #right {
     display: flex;
     flex-flow: column;
+    position: relative;
+}
+
+#wow {
+    position: absolute;
+    top: 100px;
 }
 
 table {
@@ -126,6 +132,10 @@ table th {
     border-right: solid 4px var(--bg-color);
 }
 
+#table-secondary, #table-tertiary {
+    width: 25%;
+}
+
 table td, table th {
   vertical-align: top;
 }
@@ -139,6 +149,7 @@ td {
     display: grid;
     grid-template-rows: auto 5fr auto 5fr auto 5fr auto;
     height: 100%;
+    width: 100%;
     gap: 8px;
 }
 
@@ -148,19 +159,19 @@ td {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .dj-card-song-list {
     flex: 1 1 auto;
     display: grid;
-    flex-flow: row;
     justify-content: space-evenly;
     margin: 10px;
     overflow-y: scroll;
     grid-template-rows: 1fr 1fr 1fr auto auto;
     grid-template-columns: 1fr;
     height: 120px;
-    gap: 0.5em
+    gap: 0.5em;
 }
 
 .dj-info {
@@ -178,6 +189,19 @@ td {
     display: flex; 
     align-items: center; 
     justify-content: start;
+    max-height: 30px;
+}
+
+.table-secondary .song-alt > .song-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
+.table-secondary .song-alt > .song-text p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    max-width: 212px;
 }
 
 .song-alt img {
