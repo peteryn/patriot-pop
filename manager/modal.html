@@ -411,7 +411,7 @@
           </div>
           <div class="add-dj">
             <!-- <button type="button">+ DJ</button> -->
-            <a href="modal.html">+ DJ</a>
+            <a href="">+ DJ</a>
           </div>
         </div>
         <div id="time-table">
@@ -737,5 +737,47 @@
         </div>
       </section>
     </main>
+    <div class="modal">
+      <div class="modal-box">
+        <h2>Add DJ</h2>
+        <div class="divide">
+          <form class="modal-form">
+            <select name="djs" id="dj-select" class="form-select">
+              <option value="">Gary</option>
+              <option value="">Steve</option>
+              <option value="">Jessica</option>
+            </select>
+            <select name="dj-color" id="dj-color" class="form-select">
+              <option value="">Red</option>
+              <option value="">Orange</option>
+              <option value="">Yellow</option>
+              <option value="">Green</option>
+              <option value="">Blue</option>
+              <option value="">Purple</option>
+            </select>
+            <select name="dj-date" id="dj-date" class="form-select">
+              <option value="">Feb 10</option>
+              <option value="">Feb 11</option>
+              <option value="">Feb 12</option>
+            </select>
+            <select name="dj-timeslot" id="dj-timeslot" class="form-select">
+              <option value="">12AM - 8AM</option>
+              <option value="">8AM - 4PM</option>
+              <option value="">4PM - 12AM</option>
+            </select>
+            <!-- Temporarily use links instead of button. Will add JS later -->
+            <button id="modal-cancel"><a href="manager.html">Cancel</a></button>
+            <button id="modal-submit"><a href="manager.html">Submit</a></button>
+          </form>
+          <div id="dj-profile">
+            <div class="dj-image">
+            </div>
+            <div class="dj-name">
+              <h3>DJ Gary</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
