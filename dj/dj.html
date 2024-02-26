@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    <title>DJ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  </head>
+    <link rel="stylesheet" href="../group04.css">
+    <link rel="stylesheet" href="dj.css">
+  </head>
+  <body>
+    <nav>
+      <h1>Patriot Pop</h1>
+      <div class="search-bar">
+          <div class="search-filter">
+              
+              <label for="search-filter">Filter</label>
+              <select id="search-filter">
+                  <option value="modify">most played</option>
+                  <option value="search">least played</option>
+                  <option value="search">genre</option>
+              </select>
+          </div>
+        
+          <input type="text" id="search-bar" placeholder="Search">
+      </div>
+      <ul>
+          <li ><a class="nav-link" href="../manager/manager.html">Manager</a></li>
+          <li><a class="nav-link" href="../producer/producer.html">Producer</a></li>
+          <li id="active"><a class="nav-link" href="../dj/dj.html">DJ</a></li>
+      </ul>
+  </nav>
+    <main>
+      <section id="left">
+        <div class="panel">
+          <div class="panel-header">
+              <div class="song-actions">
+                  <div class="song-cover">
+                      
+                      <img src="song-cover-icon.png" alt="Song Cover">
+                  </div>
+                  <div class="song-details">
+                    <p class="now-playing">Now Playing</p>
+                      <h2>Song 1</h2>
+                      <p>Artist 1</p>
+                      <p>Album 1</p>
+                      
+                  </div>
+                  <div class="add-icon">
+                      
+                      <img src="plus-icon.png" alt="Add to Playlist">
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="panel">
+        <div class="panel-header">
+            <div class="song-actions">
+                <div class="song-cover">
+                    <img src="song-cover-icon.png" alt="Song Cover">
+                </div>
+                <div class="song-details">
+                  <p class="now-playing">Now Playing</p>
+                    <h2>Song 2</h2>
+                    <p>Artist 2</p>
+                    <p>Album 2</p>
+                   
+                </div>
+                <div class="add-icon">
+                    <img src="plus-icon.png" alt="Add to Playlist">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+      <div class="panel-header">
+          <div class="song-actions">
+              <div class="song-cover">
+                  <img src="song-cover-icon.png" alt="Song Cover">
+              </div>
+              <div class="song-details">
+                <p class="now-playing">Now Playing</p>
+                  <h2>Song 3</h2>
+                  <p>Artist 3</p>
+                  <p>Album 3</p>
+                  <p class="now-playing">Now Playing</p>
+              </div>
+              <div class="add-icon">
+                  <img src="plus-icon.png" alt="Add to Playlist">
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="panel">
+    <div class="panel-header">
+        <div class="song-actions">
+            <div class="song-cover">
+                <img src="song-cover-icon.png" alt="Song Cover">
+            </div>
+            <div class="song-details">
+              <p class="now-playing">Now Playing</p>
+                <h2>Song 4</h2>
+                <p>Artist 4</p>
+                <p>Album 4</p>
+                
+            </div>
+            <div class="add-icon">
+                <img src="plus-icon.png" alt="Add to Playlist">
+            </div>
+        </div>
+    </div>
+</div>
+      </section>
+      
+
+      <section id="right" class="centered-section">
+        <div class="dj-profile">
+          <img src="profile.png" alt="DJ Profile Picture">
+      </div>
+        <div class="featured-dj-panel">
+            <h2>Featured DJ</h2>
+            <button class="meet-dj-button">Meet the DJ</button>
+        </div>
+        <div class="suggested-djs-panel">
+          <h2>Suggested DJs</h2>
+          <div class="suggested-dj-item">
+              <img src="profile.png" alt="Suggested DJ Icon">
+              <p>DJ Name 1</p>
+          </div>
+          <div class="suggested-dj-item">
+              <img src="profile.png" alt="Suggested DJ Icon">
+              <p>DJ Name 2</p>
+          </div>
+          <div class="suggested-dj-item">
+            <img src="profile.png" alt="Suggested DJ Icon">
+            <p>DJ Name 3</p>
+        </div>
+          <!-- Add more suggested DJs as needed -->
+      </div>
+
+        
+    </section>
+    
+      
+    </main>
+  </body>
+</html>
