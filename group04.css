@@ -85,6 +85,11 @@ main > section {
 
 /* time table */
 
+.scroll-style {
+    scrollbar-width: thin;
+    scrollbar-color: #959595 rgba(0,0,0,0);
+}
+
 .song-box {
     /* box-sizing: border-box; */
     display: grid;
@@ -133,21 +138,26 @@ main > section {
     margin: 0;
 }
 
-.add-dj {
+.add-btn-div {
     margin: 0.5em;
     margin-right: 1em;
 }
 
-.add-dj button, .add-dj a {
+.add-btn {
     padding: 0.2em 1em;
     background-color: #69C863;
     border: none;
     color: white;
-    font-weight: 800;
+    font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 8px;
     font-size: 18px;
     text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #4e9349;
 }
 
 .date-menu {

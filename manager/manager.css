@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-#header {
+header {
     text-align: center;
     padding: 1em 0px;
     width: 100%;
@@ -42,9 +42,15 @@
 }
 
 
+#schedule-dj-modal {
+    display: none;
+}
+
+#add-dj-modal {
+    display: block;
+}
 
 .modal {
-    display: block;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -125,4 +131,86 @@
 .dj-name {
     align-self: center;
     font-size: 1.4em;
+}
+
+#add-dj-modal {
+    display: none;
+}
+
+.modal-box-form {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    background-color: var(--bg-color);
+    border: solid 2px white;
+    border-radius: 8px;
+    margin-top: 15%;
+    padding: 2em;
+    text-align: center;
+}
+
+.info {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
+}
+
+.info li {
+    text-align: start;
+}
+
+#code dl {
+    text-align: start;
+}
+
+#code dd {
+    display: inline;
+}
+
+#code dt {
+    display: inline;
+}
+
+#code dt+dd {
+    color: rgb(208, 208, 66);
+}
+
+.add-dj-modal-form {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
+}
+
+#dj-fname {
+    grid-column: 2 / 4;
+}
+
+#dj-lname {
+    grid-column: 5 / 7;
+}
+
+#dj-email {
+    grid-column: 2 / 4;
+}
+
+#dj-number {
+    grid-column: 5 / 7;
+}
+
+#add-dj-btn-cancel {
+    grid-column: 3 / 4;
+}
+
+.add-dj-modal-form button {
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--fg-color);
+}
+
+#add-dj-btn-submit {
+    background-color: #69C863;
 }
