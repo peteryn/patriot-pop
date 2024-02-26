@@ -16,11 +16,11 @@
 }
 
 #producer-not-player .song-box {
-    height: 12rem;
+    height: 18vh;
 }
 
 #dj-played .song-box {
-    height: 12rem;
+    height: 18vh;
 }
 
 #producer-dj {
@@ -28,7 +28,7 @@
 }
 
 #producer-dj .song-box {
-    height: 18rem;
+    height: 26vh;
 }
 
 .report-section {
@@ -39,211 +39,6 @@
 
 .report-section h3 {
     margin: 1em;
-}
-
-.song-box {
-    /* box-sizing: border-box; */
-    display: grid;
-    /* grid-auto-flow: column; */
-    gap: 0.5em 1em;
-    grid-template-rows: 1fr 1fr 1fr auto auto auto auto;
-    /* grid-template-rows: repeat(5, minmax(0, 1fr)); */
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 1em;
-    overflow-y: scroll;
-    /* height: 200px; */
-}
-
-.song {
-    background-color: var(--bg-color);
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    display: flex; 
-    align-items: center; 
-    justify-content: start;
-}
-
-.song img {
-    height: 2rem; 
-    margin-right: 10px;
-}
-
-.song-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    text-align: center;
-}
-
-.top-menu {
-    display: flex;
-    width: 100%;
-    align-items: center;
-}
-
-.top-menu > button {
-    padding: 0;
-    margin: 0;
-}
-
-.add-dj {
-    margin: 0.5em;
-    margin-right: 1em;
-}
-
-.add-dj button, .add-dj a {
-    padding: 0.2em 1em;
-    background-color: #69C863;
-    border: none;
-    color: white;
-    font-weight: 800;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 8px;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.date-menu {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5em;
-    background-color: var(--bg-color);
-    border-radius: 8px;
-    height: 2em;
-}
-
-.date-menu h2 {
-    font-size: 16px;
-}
-
-#right {
-    display: flex;
-    flex-flow: column;
-    position: relative;
-}
-
-#wow {
-    position: absolute;
-    top: 100px;
-}
-
-table {
-    width: 100%;
-    height: 100%;
-    border-collapse: collapse;
-}
-.table-cell {
-    height: 100%;
-}
-
-table th {
-    font-size: 24px;
-    height: 10px;
-    padding: 8px;
-}
-
-#time-table {
-    width: 100%;
-    height: 100%;
-}
-
-#table-focus {
-    width: 50%;
-    height: 100%;
-}
-
-#table-secondary, #table-focus {
-    border-right: solid 4px var(--bg-color);
-}
-
-#table-secondary, #table-tertiary {
-    width: 25%;
-}
-
-table td, table th {
-  vertical-align: top;
-}
-
-td {
-    border-top: solid 4px var(--bg-color);
-    padding: 0.5em;
-}
-
-.time-zone {
-    display: grid;
-    grid-template-rows: auto 5fr auto 5fr auto 5fr auto;
-    height: 100%;
-    width: 100%;
-    gap: 8px;
-}
-
-.dj-card {
-    background-color: var(--bg-color);
-    height: 100%;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.dj-card-song-list {
-    flex: 1 1 auto;
-    display: grid;
-    justify-content: space-evenly;
-    margin: 10px;
-    overflow-y: scroll;
-    grid-template-rows: 1fr 1fr 1fr auto auto;
-    grid-template-columns: 1fr;
-    height: 120px;
-    gap: 0.5em;
-}
-
-.dj-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-}
-
-.song-alt {
-    background-color: var(--fg-color);
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    display: flex; 
-    align-items: center; 
-    justify-content: start;
-    max-height: 30px;
-}
-
-.table-secondary .song-alt > .song-text {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; 
-}
-.table-secondary .song-alt > .song-text p {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; 
-    max-width: 212px;
-}
-
-.song-alt img {
-    height: 2rem; 
-    margin-right: 10px;
-}
-
-.dj-info img {
-    height: 40px;
-}
-
-.dj-song-box {
-    display: grid;
 }
 
 
