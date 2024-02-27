@@ -175,7 +175,7 @@ header {
     color: rgb(208, 208, 66);
 }
 
-.add-dj-modal-form {
+#add-dj-modal-form {
     margin-top: 1em;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -202,7 +202,7 @@ header {
     grid-column: 3 / 4;
 }
 
-.add-dj-modal-form button {
+#add-dj-modal-form button {
     border: none;
     padding: 0.5em 1em;
     border-radius: 8px;
@@ -212,5 +212,5 @@ header {
 }
 
 #add-dj-btn-submit {
-    background-color: #69C863;
+    background-color: #69C863 !important;
 }

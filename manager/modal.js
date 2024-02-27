@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.display = "none";
   };
 
-
   const addDjBtn = document.querySelector("#add-dj-btn");
   const addModal = document.querySelector("#add-dj-modal");
   addDjBtn.onclick = function () {
@@ -27,10 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
   addModalCancel.onclick = function () {
     addModal.style.display = "none";
   };
-  const addModalSubmit = document.querySelector("#add-dj-btn-submit");
-  addModalSubmit.onclick = () => {
-    addModal.style.display = "none";
-  };
+  // const addModalSubmit = document.querySelector("#add-dj-btn-submit");
+  // addModalSubmit.onclick = function () {
+  //   addModal.style.display = "none";
+  // };
 
   window.onclick = function (event) {
     if (event.target == modal) {

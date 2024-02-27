@@ -18,6 +18,9 @@
       #dj-info-form~label {
         font-size: 16px;
       }
+      #add-dj-modal h2 {
+        font-size: 2em;
+      }
     </style>
   </head>
   <body>
@@ -31,7 +34,7 @@
     </nav>
     <main>
       <section id="left">
-        <header id="header">
+        <header>
           <h2 style="font-size: 2em">Today's Report</h2>
         </header>
         <div id="producer-not-player" class="report-section">
@@ -779,7 +782,6 @@
               <option value="slot1">8AM - 4PM</option>
               <option value="slot2">4PM - 12AM</option>
             </select>
-            <!-- Temporarily use links instead of button. Will add JS later -->
             <button type="button" id="modal-cancel">Cancel</button>
             <button id="modal-submit">Submit</button>
           </form>
@@ -818,18 +820,18 @@
             </dl>
           </div>
         </div>
-        <form action="" class="add-dj-modal-form">
+        <form id="add-dj-modal-form" method="get">
           <h3 id="dj-info-form">Dj Info</h3>
           <label for="dj-fname" id="dj-fname-label">First Name</label>
-          <input type="text" name="dj-fname" id="dj-fname">
+          <input type="text" name="dj-fname" id="dj-fname" required placeholder="John">
           <label for="dj-lname">Last Name</label>
-          <input type="text" name="dj-lname" id="dj-lname">
+          <input type="text" name="dj-lname" id="dj-lname" required placeholder="Smith">
           <label for="dj-email">Email</label>
-          <input type="email" name="dj-email" id="dj-email">
-          <label for="dj-number">Phone number</label>
-          <input type="tel" name="dj-number" id="dj-number">
+          <input type="email" name="dj-email" id="dj-email" required placeholder="john.smith@gmail.com">
+          <label for="dj-number">Phone number (dashes)</label>
+          <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="dj-number" id="dj-number" required placeholder="123-456-7890">
           <button type="button" id="add-dj-btn-cancel">Cancel</button>
-          <button id="add-dj-btn-submit">Submit</button>
+          <button type="submit" id="add-dj-btn-submit" form="add-dj-modal-form">Submit</button>
         </form>
       </div>
     </div>
