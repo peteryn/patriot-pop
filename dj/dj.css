@@ -69,7 +69,7 @@ nav ul li {
 .song-cover img {
     width: 80px; 
     height: 80px;
-    border-radius: 3px; 
+    border-radius: 2px; 
 }
 
 .song-details {
@@ -112,12 +112,21 @@ nav ul li {
     background-color: #575656;
     border-radius: 5px;
 }
-#right {
-    background: linear-gradient(to bottom right, #363636, #45a049);
+#left {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+  }
+  .left-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px; /* Adjust the max-width as needed */
+    width: 100%;
 }
+
+
 
 .centered-section {
     justify-content: center;
@@ -183,11 +192,12 @@ nav ul li {
 
 main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 1em;
     margin: 0em 1em 1em;
     flex: 1 1 auto;
+    height: 100%;
 }
 
 main > section {
@@ -198,6 +208,13 @@ main > section {
     padding: 1em;
     margin: 1em;
     background-color: #2C2C2D;
+    border-radius: 4px;
+}
+.rightCenter{
+    background: linear-gradient(to bottom right, #363636, #45a049);
+    padding: 1em;
+    margin: 1em;
+    
     border-radius: 4px;
 }
 
