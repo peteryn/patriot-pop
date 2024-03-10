@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return currentDayCount;
   }
 
+  // let user click on arrows to navigate days
   let currentDayCount = setDates(0);
   const nextDayBtn = document.getElementById("next-day-btn");
   nextDayBtn.addEventListener("click", (e) => {
@@ -60,4 +61,26 @@ document.addEventListener("DOMContentLoaded", () => {
   prevDayBtn.addEventListener("click", (e) => {
     currentDayCount = setDates(--currentDayCount);
   });
+
+  // let user use arrow keys to navigate days
+  document.addEventListener("keydown", function (e) {
+    if (e.key == "ArrowLeft") {
+      currentDayCount = setDates(--currentDayCount);
+    }
+    if (e.key == "ArrowRight") {
+      currentDayCount = setDates(++currentDayCount);
+    }
+  });
+
+  // let user enlarge dj names
+  const djNames = document.querySelectorAll(".dj-info h4");
+  for (let dj of djNames) {
+    dj.addEventListener("dblclick", (e) => {
+      if (dj.style.fontSize == "32px") {
+        dj.style.fontSize = "16px";
+      } else {
+        dj.style.fontSize = "32px";
+      }
+    });
+  }
 });

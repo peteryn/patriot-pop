@@ -39,4 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
       addModal.style.display = "none";
     }
   };
+
+  const addDjForm = document.getElementById("add-dj-modal-form");
+  addDjForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const fname = document.getElementById("dj-fname");
+    const lname = document.getElementById("dj-lname");
+    if (fname.value.length >= 20 || lname.value.length >= 20) {
+      const errorBanner = document.getElementById("dj-form-error");
+      errorBanner.style.display = "block";
+    } else {
+      addDjForm.submit();
+    }
+  });
 });

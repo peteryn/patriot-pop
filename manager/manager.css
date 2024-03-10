@@ -214,3 +214,20 @@ header {
 #add-dj-btn-submit {
     background-color: #69C863 !important;
 }
+
+#remove-dj-btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #F4CAC3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dj-form-error {
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #F4CAC3;
+    color: black;
+    border-radius: 8px;
+    display: none;
+}
