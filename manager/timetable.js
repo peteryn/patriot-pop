@@ -76,10 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const djNames = document.querySelectorAll(".dj-info h4");
   for (let dj of djNames) {
     dj.addEventListener("dblclick", (e) => {
-      if (dj.style.fontSize == "32px") {
-        dj.style.fontSize = "16px";
-      } else {
+      let fontSize = dj.style.fontSize;
+      fontSize = fontSize.slice(0, -2);
+
+      if (fontSize == 16 || "") {
+        dj.style.fontSize = "24px";
+      } else if (fontSize == 24) {
         dj.style.fontSize = "32px";
+      } else {
+        dj.style.fontSize = "16px";
       }
     });
   }
