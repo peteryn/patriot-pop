@@ -13,19 +13,20 @@
   <body>
     <nav>
       <h1>Patriot Pop</h1>
-      <div class="search-bar">
-          <div class="search-filter">
-              
-              <label for="search-filter">Filter</label>
-              <select id="search-filter">
-                  <option value="modify">most played</option>
-                  <option value="search">least played</option>
-                  <option value="search">genre</option>
-              </select>
-          </div>
-        
-          <input type="text" id="search-bar" placeholder="Search">
-      </div>
+      <div class="search-bar-container">
+        <div class="search-filter">
+            <select id="search-filter">
+                <option value="modify">Most Played</option>
+                <option value="search">Least Played</option>
+                <option value="search">Genre</option>
+            </select>
+            <label for="search-filter">Filter</label>
+        </div>
+        <input type="text" id="search-bar" placeholder="Search">
+        <div class="search-icon">
+            <img src="../images/searchIcon.png" alt="Search" />
+        </div>
+    </div>
       <ul>
           <li ><a class="nav-link" href="../manager/manager.html">Manager</a></li>
           <li><a class="nav-link" href="../producer/producer.html">Producer</a></li>
@@ -34,6 +35,8 @@
   </nav>
     <main>
       <section id="left">
+        
+      <div class="song-panels">
         <div class="panel">
           <div class="panel-header">
               <div class="song-actions">
@@ -113,6 +116,8 @@
         </div>
     </div>
 </div>
+</div>
+
 
 <div class="rightCenter">
   <div class="left-container">
@@ -452,7 +457,7 @@
               <h3>8am</h3>
             </div>
             <div>
-              <!-- dj card -->
+             
             </div>
             <div>
               <h3>4pm</h3>
@@ -477,8 +482,6 @@
   </div>
 </section>
     </main>
-
 </html>
-
 
 
