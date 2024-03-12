@@ -109,6 +109,7 @@ nav ul li {
 }
 
 #search-bar {
+    color: white;
     width: 180%; 
     padding: 9px;
     font-size: 1em;
@@ -117,7 +118,18 @@ nav ul li {
     border-radius: 5px;
 }
 .search-icon {
+    background-color: transparent;
     padding: 0 10px;
+}
+.clear-bttn
+{
+    color: white;
+    background-color: transparent;
+}
+.label-sqr
+{
+    color: white;
+    background-color: transparent;
 }
 
 .search-icon img {
@@ -144,7 +156,30 @@ nav ul li {
     max-width: 800px; 
     width: 100%;
 }
-
+.success-popup {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px;
+    position: fixed; 
+    top: 0px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    border-radius: 5px;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px; 
+  }
+  
+  .undo, .close-popup {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .close-popup {
+    font-weight: bold;
+  }
 .centered-section {
     justify-content: center;
     align-items: center;
@@ -206,6 +241,7 @@ nav ul li {
     border-radius: 50%;
     margin-bottom: 3px;
 }
+
 .panel {
     padding: 1em;
     margin: 1em;
@@ -230,3 +266,53 @@ nav ul li {
     color: white;
     margin-bottom: 0.5em;
 }
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+
+  .modal-content {
+    background-color: #333; 
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+    color: white; 
+  }
+  
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #repertoire {
+    background-color: #444;
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  #repertoire:hover {
+    background-color: #555; 
+  }
+
