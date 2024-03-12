@@ -9,24 +9,27 @@
     <link rel="stylesheet" href="../group04.css">
     <link rel="stylesheet" href="dj.css">
     <link rel="stylesheet" href="manager.css">
+  
   </head>
   <body>
     <nav>
       <h1>Patriot Pop</h1>
-      <div class="search-bar-container">
+      <form class="search-bar-container" id="search-form">
         <div class="search-filter">
             <select id="search-filter">
                 <option value="modify">Most Played</option>
                 <option value="search">Least Played</option>
                 <option value="search">Genre</option>
             </select>
-            <label for="search-filter">Filter</label>
+            <label for="search-filter"></label>
+            <button type="button" id="clear-btn" class= "clearbttn" onclick ="alert('Cleared')">Clear Search</button>
         </div>
-        <input type="text" id="search-bar" placeholder="Search">
-        <div class="search-icon">
+        <input type="text" id="search-bar" name="search" placeholder="Search">
+        <button type="submit" class="search-icon" aria-label="Search">
+         <div id="search-error" class="search-error" style="display:none; color: red;"></div>
             <img src="../images/searchIcon.png" alt="Search" />
-        </div>
-    </div>
+        </button>
+    </form>
       <ul>
           <li ><a class="nav-link" href="../manager/manager.html">Manager</a></li>
           <li><a class="nav-link" href="../producer/producer.html">Producer</a></li>
@@ -42,18 +45,21 @@
               <div class="song-actions">
                   <div class="song-cover">
                       
-                      <img src="../images/song-cover-icon.png" alt="Song Cover">
+                      <img src="../images/pretty.png" alt="Song Cover">
                   </div>
+                  
                   <div class="song-details">
                     <p class="now-playing">Now Playing</p>
-                      <h2>Song 1</h2>
-                      <p>Artist 1</p>
-                      <p>Album 1</p>
+                      <h2>Pretty Afternoon</h2>
+                      <p>Andrah</p>
+                      <p>NCS</p>
                       
                   </div>
                   <div class="add-icon">
-                      
                       <img src="../images/plus-icon.png" alt="Add to Playlist">
+                  </div>
+                  <div class="success-popup" style="display: none;">
+                    Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
                   </div>
               </div>
           </div>
@@ -63,17 +69,20 @@
         <div class="panel-header">
             <div class="song-actions">
                 <div class="song-cover">
-                    <img src="/images/song-cover-icon.png" alt="Song Cover">
+                    <img src="/images/sumu.png" alt="Song Cover">
                 </div>
                 <div class="song-details">
                   <p class="now-playing">Now Playing</p>
-                    <h2>Song 2</h2>
-                    <p>Artist 2</p>
-                    <p>Album 2</p>
+                    <h2>Karma</h2>
+                    <p>Ariadne</p>
+                    <p>NCS</p>
                    
                 </div>
                 <div class="add-icon">
                     <img src="/images/plus-icon.png" alt="Add to Playlist">
+                </div>
+                <div class="success-popup" style="display: none;">
+                  Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
                 </div>
             </div>
         </div>
@@ -82,17 +91,20 @@
       <div class="panel-header">
           <div class="song-actions">
               <div class="song-cover">
-                  <img src="/images/song-cover-icon.png" alt="Song Cover">
+                  <img src="/images/galactic.png" alt="Song Cover">
               </div>
               <div class="song-details">
                 <p class="now-playing">Now Playing</p>
-                  <h2>Song 3</h2>
-                  <p>Artist 3</p>
-                  <p>Album 3</p>
+                  <h2>Galatic</h2>
+                  <p>Natty Lou</p>
+                  <p>NCS</p>
                   <p class="now-playing">Now Playing</p>
               </div>
               <div class="add-icon">
                   <img src="/images/plus-icon.png" alt="Add to Playlist">
+              </div>
+              <div class="success-popup" style="display: none;">
+                Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
               </div>
           </div>
       </div>
@@ -113,6 +125,9 @@
             <div class="add-icon">
                 <img src="../images/plus-icon.png" alt="Add to Playlist">
             </div>
+            <div class="success-popup" style="display: none;">
+              Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
+            </div>
         </div>
     </div>
 </div>
@@ -128,21 +143,21 @@
   </div>
   <div class="featured-dj-panel">
       <h2>Featured DJ</h2>
-      <button class="meet-dj-button">Meet the DJ</button>
+      <button id="meet-dj-button" class="meet-dj-button">Meet the DJ</button>
   </div>
   <div class="suggested-djs-panel">
       <h2>Suggested DJs</h2>
       <div class="suggested-dj-item">
           <img src="../images/profile.png" alt="Suggested DJ Icon">
-          <p>DJ Name 1</p>
+          <p>DJ Gary</p>
       </div>
       <div class="suggested-dj-item">
           <img src="../images/profile.png" alt="Suggested DJ Icon">
-          <p>DJ Name 2</p>
+          <p>DJ Steve</p>
       </div>
       <div class="suggested-dj-item">
           <img src="../images/profile.png" alt="Suggested DJ Icon">
-          <p>DJ Name 3</p>
+          <p>DJ Jessica</p>
       </div>
       
   </div>
@@ -482,6 +497,20 @@
   </div>
 </section>
     </main>
+    <div id="djModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="dj-name"></p>
+          <p id="dj-genre"></p>
+          <p id="dj-experience"></p>
+          <button id="repertoire" class = "repertoire">DJ's Repertoire</button>
+      </div>
+  </div>
+    
+    <script src="djModal.js"></script>
+    <script src="search.js"></script>
+    <script src="songAdd.js"></script>
+  </body>
 </html>
 
 
