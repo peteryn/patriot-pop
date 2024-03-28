@@ -2,6 +2,14 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
+const bodyParser = require('body-parser')
+
+app.use(
+  bodyParser.urlencoded({
+    // to support URL-encoded bodies
+    extended: true,
+  })
+);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -17,8 +25,14 @@ app.get("/manager", async (req, res) => {
   res.render("partials/base", {
     pageTitle: "Manager",
     content: content,
-    profile: 0,
+    activePage: "manager",
   });
+});
+
+app.post("/manager/adddj", (req, res) => {
+  const a = req.body.djs
+  console.log(a);
+  res.redirect("/manager");
 });
 
 app.get("/producer", async (req, res) => {
@@ -26,7 +40,7 @@ app.get("/producer", async (req, res) => {
   res.render("partials/base", {
     pageTitle: "Producer",
     content: content,
-    profile: 1,
+    activePage: "producer",
   });
 });
 

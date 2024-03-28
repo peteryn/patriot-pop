@@ -13,17 +13,12 @@
   <script src="/js/songs.js" type="module"></script>
 </head>
 <body>
-
   <nav>
     <h2>Patriot Pop</h2>
     <ul>
-      <% if (profile == 0) {%>
-        <li id="active"><a class="nav-link" href="../manager">Manager</a></li>
-      <% } else { %>
-        <li><a class="nav-link" href="../manager">Manager</a></li>
-      <% } %>
-      <li><a class="nav-link" href="../producer">Producer</a></li>
-      <li><a class="nav-link" href="../dj">DJ</a></li>
+      <li <% if (activePage === 'manager') { %>id="active"<% } %>><a class="nav-link" href="/manager">Manager</a></li>
+      <li <% if (activePage === 'producer') { %>id="active"<% } %>><a class="nav-link" href="/producer">Producer</a></li>
+      <li <% if (activePage === 'dj') { %>id="active"<% } %>><a class="nav-link" href="/dj">DJ</a></li>
     </ul>
   </nav>
 
