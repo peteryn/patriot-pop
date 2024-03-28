@@ -378,9 +378,9 @@
     <div class="divide">
       <form class="modal-form" method="POST" action="/manager/adddj">
         <select name="djs" id="dj-select" class="form-select">
-          <option value="gary">Gary</option>
-          <option value="steve">Steve</option>
-          <option value="jessica">Jessica</option>
+          <% for (let i = 0; i < djs.length; i++) {%>
+            <option value="<%= djs[i].name.toLowerCase() %>"><%= djs[i].name %></option>
+          <% } %>
         </select>
         <select name="dj-color" id="dj-color" class="form-select">
           <option value="red">Red</option>
@@ -458,3 +458,9 @@
   </div>
 </div>
 <script src="/js/modal.js"></script>
+
+<%= JSON.stringify(djs) %>
+
+          <% for (let i = 0; i < djs.length; i++) {%>
+            <option value="jessica"><%= djs[i].name %></option>
+          <% } %>
