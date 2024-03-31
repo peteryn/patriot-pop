@@ -16,6 +16,12 @@ router.get("/api/day/:dayNumber", async (req, res) => {
   res.json(data);
 });
 
+// TODO: add post API for when manager adds a new timeslot
+
+// TODO: add put API for when timeslot changes
+
+// TODO: add delete API for when timeslot is deleted
+
 // Manager Routes
 router.get("/manager", async (req, res) => {
   let djs = await fs.promises.readFile(
