@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentDayCount == 0) {
       currentDayCount = Math.floor(Date.now() / dayInSec);
     }
+    console.log(currentDayCount);
 
     const dateRange = document.getElementById("date-range");
     const currentDay = document.getElementById("current-day");

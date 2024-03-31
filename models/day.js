@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const timeslotSchema = new mongoose.Schema({
+const daySchema = new mongoose.Schema({
   dayNumber: Number,
   slot1: {
     dj: String,
@@ -57,3 +57,5 @@ const timeslotSchema = new mongoose.Schema({
     ],
   },
 });
+
+module.exports = mongoose.model("Day", daySchema, "day");

@@ -1,0 +1,718 @@
+[
+    {
+        "dayNumber": 19813,
+        "slot1": {
+            "dj": "Gary",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ]
+        },
+        "slot2": {
+            "dj": "Gary",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ]
+        },
+        "slot3": {
+            "dj": "Jessica",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                }
+            ]
+        }
+    },
+    {
+        "dayNumber": 19814,
+        "slot1": {
+            "dj": "Steve",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                }
+            ]
+        },
+        "slot2": {
+        },
+        "slot3": {
+            "dj": "Jessica",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                }
+            ]
+        }
+    },
+    {
+        "dayNumber": 19814,
+        "slot1": {
+        },
+        "slot2": {
+            "dj": "Gary",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ]
+        },
+        "slot3": {
+        }
+    },
+    {
+        "dayNumber": 19815,
+        "slot1": {
+            "dj": "Steve",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                }
+            ]
+        },
+        "slot2": {
+            "dj": "Steve",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ]
+        },
+        "slot3": {
+        }
+    },
+    {
+        "dayNumber": 19816,
+        "slot1": {
+            "dj": "Gary",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ]
+        },
+        "slot2": {
+            "dj": "Gary",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ]
+        },
+        "slot3": {
+            "dj": "Jessica",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                }
+            ]
+        }
+    }
+]
