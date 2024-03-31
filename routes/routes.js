@@ -31,7 +31,7 @@ router.get("/manager", async (req, res) => {
       return JSON.parse(data);
     }
   );
-  djs = JSON.parse(djs);
+  djs = JSON.parse(djs); // TODO update this to use database instead
   const content = await ejs.renderFile("./views/pages/manager.ejs", {
     djs: djs,
   });
