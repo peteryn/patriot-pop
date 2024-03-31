@@ -4,6 +4,18 @@ const router = express.Router();
 const ejs = require("ejs");
 const fs = require("fs");
 
+const dayProvider = require("../models/dayProvider");
+
+// timetable api
+router.get("/api/day/:dayNumber", async (req, res) => {
+  const dayNumber = req.params.dayNumber;
+  // dayProvider.getDay returns {} for a day does not have a document in the db
+  const data = await dayProvider.getDay(dayNumber);
+  // add the day number, even if the day doesn't exist so it can display properly
+  data.dayNumber = dayNumber;
+  res.json(data);
+});
+
 // Manager Routes
 router.get("/manager", async (req, res) => {
   let djs = await fs.promises.readFile(

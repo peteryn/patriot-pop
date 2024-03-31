@@ -9,6 +9,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", routes);
 
-app.listen(8081, () => {
-  console.log("Express listening at port 8081");
+const port = 8080
+app.listen(port, () => {
+  console.log(`Express listening at port ${port}`);
 });
