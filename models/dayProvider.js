@@ -19,6 +19,9 @@ async function getDay(dayNumber) {
   } catch (err) {
     data = {};
   }
+  if (data == null) {
+    data = {};
+  }
   return data;
 }
 

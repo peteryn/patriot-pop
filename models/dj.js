@@ -4,4 +4,4 @@ const djSchema = mongoose.Schema({
   name: String,
 })
 
-module.exports("Dj", djSchema, "dj");
+module.exports = mongoose.model("Dj", djSchema, "dj");
