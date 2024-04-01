@@ -42,10 +42,13 @@ function getNonIntersection(arr, intersection) {
 }
 
 function generateReport(producerAssigned, djPlayed) {
-	const intersection = getIntersection(producerAssigned, djPlayed);
-	const producerAssignedDjNotPlayed = getNonIntersection(producerAssigned, intersection);
-	const djPlayedNotAssigned = getNonIntersection(djPlayed, intersection);
-	return [producerAssignedDjNotPlayed, intersection, djPlayedNotAssigned]
+  const intersection = getIntersection(producerAssigned, djPlayed);
+  const producerAssignedDjNotPlayed = getNonIntersection(
+    producerAssigned,
+    intersection
+  );
+  const djPlayedNotAssigned = getNonIntersection(djPlayed, intersection);
+  return [producerAssignedDjNotPlayed, intersection, djPlayedNotAssigned];
 }
 
-module.exports = {generateReport}
+module.exports = { generateReport };

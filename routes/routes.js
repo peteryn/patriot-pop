@@ -5,6 +5,7 @@ const ejs = require("ejs");
 const fs = require("fs");
 
 const dayProvider = require("../models/dayProvider");
+const reportHelper = require("./helper/report");
 
 // timetable api
 router.get("/api/day/:dayNumber", async (req, res) => {
@@ -31,10 +32,32 @@ router.get("/manager", async (req, res) => {
       return JSON.parse(data);
     }
   );
+
+  const dayNumber = 19813; // TODO use real time when in production
+  const data = await dayProvider.getDay(dayNumber);
+  if (data.dayNumber == null) {
+    // write code to display nothing
+  }
+
+  console.log(data);
+  console.log(data.slot1.djPlayedSongs);
+  // TODO: need to combine the song information from all three timeslots
+  // then pass into generate report
+  const report = reportHelper.generateReport(
+    data.producerAssignedSongs,
+    data.djPlayedSongs
+  );
+  const [producerAssignedNotPlayed, producerAndDjPlayed, djPlayedNotAssigned] =
+    report;
+
   djs = JSON.parse(djs); // TODO update this to use database instead
   const content = await ejs.renderFile("./views/pages/manager.ejs", {
     djs: djs,
+    panp: producerAssignedNotPlayed,
+    padp: producerAndDjPlayed,
+    dpna: djPlayedNotAssigned,
   });
+
   res.render("partials/base", {
     pageTitle: "Manager",
     content: content,

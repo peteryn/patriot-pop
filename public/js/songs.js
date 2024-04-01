@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (repeatSongs != false) {
     let i = 0;
     for (i = 0; i < 23; i++) {
-      producerNotPlayed.appendChild(createSongElement(ncsSong));
+      // producerNotPlayed.appendChild(createSongElement(ncsSong));
     }
 
     i = 0;

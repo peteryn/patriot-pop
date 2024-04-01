@@ -7,6 +7,14 @@
       <h3 class="section-title">Producer Songs Not Played</h3>
       <div id="pnp-song-box" class="song-box scroll-style">
         <!-- populate using ./songs.js -->
+        <% for (let i = 0; i < panp.length; i++) { %>
+          <div class="song">
+            <img src="/images<%= panp[i].albumPictureName%>" alt="">
+            <div class="song-text">
+              <p><%= panp[i].artist %> - <%= panp[i].songTitle %></p>
+            </div>
+          </div>
+        <% } %>
       </div>
     </div>
 
