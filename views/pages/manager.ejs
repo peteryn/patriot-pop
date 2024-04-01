@@ -9,7 +9,7 @@
         <!-- populate using ./songs.js -->
         <% for (let i = 0; i < panp.length; i++) { %>
           <div class="song">
-            <img src="/images<%= panp[i].albumPictureName%>" alt="">
+            <img src="/images/<%= panp[i].albumPictureName%>" alt="">
             <div class="song-text">
               <p><%= panp[i].artist %> - <%= panp[i].songTitle %></p>
             </div>
@@ -22,6 +22,14 @@
       <h3 class="section-title">DJ Played Songs</h3>
       <div id="dps-song-box" class="song-box scroll-style">
         <!-- populate using ./songs.js -->
+        <% for (let i = 0; i < padp.length; i++) { %>
+          <div class="song">
+            <img src="/images/<%= padp[i].albumPictureName%>" alt="">
+            <div class="song-text">
+              <p><%= padp[i].artist %> - <%= padp[i].songTitle %></p>
+            </div>
+          </div>
+        <% } %>
       </div>
     </div>
 
@@ -29,6 +37,14 @@
       <h3 class="section-title">Producer Songs Played By DJ</h3>
       <div id="notdj-song-box" class="song-box scroll-style">
         <!-- populate using ./songs.js -->
+        <% for (let i = 0; i < dpna.length; i++) { %>
+          <div class="song">
+            <img src="/images/<%= dpna[i].albumPictureName%>" alt="">
+            <div class="song-text">
+              <p><%= dpna[i].artist %> - <%= dpna[i].songTitle %></p>
+            </div>
+          </div>
+        <% } %>
       </div>
     </div>
     <!-- <h2>Double click DJ name to enlarge</h2>

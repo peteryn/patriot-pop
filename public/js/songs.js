@@ -34,16 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     i = 0;
     while (i < 10) {
-      djPlayed.appendChild(createSongElement(ncsSong));
+      // djPlayed.appendChild(createSongElement(ncsSong));
       i++;
     }
   }
 
   const djNotPlayed = document.getElementById("notdj-song-box");
   const newSongs = getNewSongs()
-  newSongs.push(new Song("Got a Feeling", "Raul Ojamaa", "/images/feeling.png"))
-  capitalizeSongs(newSongs);
-  for (let i = 0; i < 6; i++) {
-    newSongs.forEach(song => djNotPlayed.appendChild(song.createDOMElement()))
-  }
+  // newSongs.push(new Song("Got a Feeling", "Raul Ojamaa", "/images/feeling.png"))
+  // capitalizeSongs(newSongs);
+  // for (let i = 0; i < 6; i++) {
+  //   newSongs.forEach(song => djNotPlayed.appendChild(song.createDOMElement()))
+  // }
 });

@@ -33,19 +33,20 @@ router.get("/manager", async (req, res) => {
     }
   );
 
-  const dayNumber = 19813; // TODO use real time when in production
+  const dayNumber = 19814; // TODO use real time when in production
   const data = await dayProvider.getDay(dayNumber);
   if (data.dayNumber == null) {
     // write code to display nothing
   }
 
-  console.log(data);
-  console.log(data.slot1.djPlayedSongs);
+  const producerAssignedSongs = reportHelper.getAllProducerAssigned(data);
+  const djPlayedSongs = reportHelper.getAllDjAssigned(data);
+  // console.log(producerAssignedSongs)
   // TODO: need to combine the song information from all three timeslots
   // then pass into generate report
   const report = reportHelper.generateReport(
-    data.producerAssignedSongs,
-    data.djPlayedSongs
+    producerAssignedSongs,
+    djPlayedSongs
   );
   const [producerAssignedNotPlayed, producerAndDjPlayed, djPlayedNotAssigned] =
     report;

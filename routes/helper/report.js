@@ -27,14 +27,14 @@ function getNonIntersection(arr, intersection) {
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i].songTitle;
     let inIntersection = false;
-    for (let j = 0; j < intersection.length; i++) {
+    for (let j = 0; j < intersection.length; j++) {
       if (intersection[j].songTitle === item) {
         inIntersection = true;
         break;
       }
     }
     if (!inIntersection) {
-      nonIntersection.append(arr[i]);
+      nonIntersection.push(arr[i]);
     }
   }
 
@@ -51,4 +51,34 @@ function generateReport(producerAssigned, djPlayed) {
   return [producerAssignedDjNotPlayed, intersection, djPlayedNotAssigned];
 }
 
-module.exports = { generateReport };
+function getAllProducerAssigned(dayData) {
+  const a1 = dayData.slot1.producerAssignedSongs;
+  const a2 = dayData.slot2.producerAssignedSongs;
+  const a3 = dayData.slot3.producerAssignedSongs;
+  return concatNotNull(a1, a2, a3);
+}
+
+function getAllDjAssigned(dayData) {
+  const a1 = dayData.slot1.djPlayedSongs;
+  const a2 = dayData.slot2.djPlayedSongs;
+  const a3 = dayData.slot3.djPlayedSongs;
+  return concatNotNull(a1, a2, a3);
+}
+
+function concatNotNull(a1, a2, a3) {
+  let result = [];
+  if (a1 != null) {
+    result = result.concat(a1);
+  }
+  if (a2 != null) {
+    result = result.concat(a2);
+  }
+  if (a3 != null) {
+    result = result.concat(a3);
+  }
+  // result = new Set(result);
+  // result = new Array(result);
+  return result;
+}
+
+module.exports = { generateReport, getAllProducerAssigned, getAllDjAssigned };
