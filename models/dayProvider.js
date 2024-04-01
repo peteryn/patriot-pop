@@ -24,5 +24,35 @@ async function getDay(dayNumber) {
   }
   return data;
 }
+async function addDay(dayData) {
+  try {
+    let newDay = new Day(dayData);
+    let savedDay = await newDay.save();
+    return savedDay;
+  } catch (err) {
+    throw err;
+  }
+}
 
-module.exports = { getDay };
+async function updateDay(dayNumber, updateData) {
+  try {
+    let updatedDay = await Day.findOneAndUpdate(
+      { dayNumber: dayNumber },
+      { $set: updateData },
+      { new: true, runValidators: true }
+    );
+    return updatedDay;
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function deleteDay(dayNumber) {
+  try {
+    await Day.deleteOne({ dayNumber: dayNumber });
+  } catch (err) {
+    throw err;
+  }
+}
+
+module.exports = { getDay, addDay, updateDay, deleteDay};
