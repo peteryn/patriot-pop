@@ -81,3 +81,20 @@ router.get("/producer", async (req, res) => {
 });
 
 module.exports = router;
+//Dj routes
+router.get("/dj", async (req, res) => {
+  try {
+    const djData = await someAsyncOperationToFetchDJData();
+    const content = await ejs.renderFile("./views/pages/dj.ejs", {
+      dj: djData,
+    });
+    res.render("partials/base", {
+      pageTitle: "DJ",
+      content: content,
+      activePage: "dj",
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("An error occurred while preparing the DJ page.");
+  }
+});

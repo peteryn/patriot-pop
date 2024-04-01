@@ -14,22 +14,7 @@
   <body>
     <nav>
       <h1>Patriot Pop</h1>
-      <form class="search-bar-container" id="search-form">
-        <div class="search-filter">
-            <select id="search-filter">
-                <option value="modify">Most Played</option>
-                <option value="search">Least Played</option>
-                <option value="search">Genre</option>
-            </select>
-            <label for="search-filter"></label>
-            <button type="button" id="clear-btn" class= "clearbttn" onclick ="alert('Cleared')">Clear Search</button>
-        </div>
-        <input type="text" id="search-bar" name="search" placeholder="Search">
-        <button type="submit" class="search-icon" aria-label="Search">
-         <div id="search-error" class="search-error" style="display:none; color: red;"></div>
-            <img src="../images/searchIcon.png" alt="Search" />
-        </button>
-    </form>
+      
       <ul>
           <li ><a class="nav-link" href="../manager/manager.html">Manager</a></li>
           <li><a class="nav-link" href="../producer/producer.html">Producer</a></li>
@@ -123,7 +108,7 @@
                 
             </div>
             <div class="add-icon">
-                <img src="../images/plus-icon.png" alt="Add to Playlist">
+              <img src="../images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
             </div>
             <div class="success-popup" style="display: none;">
               Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
@@ -136,7 +121,14 @@
 
 <div class="rightCenter">
   <div class="left-container">
-
+    <form class="search-bar-container" id="search-form">
+      
+      <input type="text" id="search-bar" name="search" placeholder="Search">
+      <button type="submit" class="search-icon" aria-label="Search">
+       <div id="search-error" class="search-error" style="display:none; color: red;"></div>
+          <img src="../images/searchIcon.png" alt="Search" />
+      </button>
+    </form>
 
   <div class="dj-profile">
       <img src="../images/profile.png" alt="DJ Profile Picture">
