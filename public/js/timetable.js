@@ -1,4 +1,84 @@
 document.addEventListener("DOMContentLoaded", () => {
+  async function fetchDayData(dayNumber) {
+    try {
+      const response = await fetch(`/api/timetable/${dayNumber}`);
+      if (!response.ok) {
+        throw new Error('timetable.js line_6. Error fetching timetable');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('timetable.js line_11. Error fetching DATA from timetable', error);
+    }
+  }
+
+  function generateTimeslotCard(timeslot) {
+    const card = document.createElement('article');
+    card.className = 'dj-card';
+
+    const songList = document.createElement('div');
+    songList.className = 'dj-card-song-list scroll-style';
+
+    timeslot.producerAssignedSongs.forEach(song => {
+      const songDiv = document.createElement('div');
+      songDiv.className = 'song-alt';
+
+      const img = document.createElement('img');
+      img.src = `../images/${song.albumPictureName}`;
+      img.alt = song.songTitle;
+
+      const songTextDiv = document.createElement('div');
+      songTextDiv.className = 'song-text';
+
+      const songP = document.createElement('p');
+      songP.textContent = `${song.artist} - ${song.songTitle}`;
+
+      songTextDiv.appendChild(songP);
+      songDiv.appendChild(img);
+      songDiv.appendChild(songTextDiv);
+
+      songList.appendChild(songDiv);
+    });
+
+    const djInfo = document.createElement('div');
+    djInfo.className = 'dj-info';
+
+    const djName = document.createElement('h4');
+    djName.textContent = timeslot.dj;
+
+    djInfo.appendChild(djName);
+
+    card.appendChild(songList);
+    card.appendChild(djInfo);
+
+    return card;
+  }
+
+  async function updateTimetableForDay(dayNumber) {
+    const dayData = await fetchDayData(dayNumber);
+  
+    if (!dayData || dayData.length === 0) {
+      console.error('No data found for day', dayNumber);
+      return;
+    }
+  
+    const slots = ['slot1', 'slot2', 'slot3']; //our 3-fixed slots format from days.json
+    slots.forEach((slot, index) => {
+      const containerId = `slot-${index + 1}`; // IDK if this is pulling container_ID this way actully will work; We will prob need to make changes to html to accomodate for 3: slot-1, slot-2, slot-3
+      const container = document.getElementById(containerId);
+  
+      if (container && dayData[0][slot]) {
+        container.innerHTML = ''; 
+        const timeslotCard = generateTimeslotCard(dayData[0][slot]);
+        container.appendChild(timeslotCard);
+      }
+    });
+  }
+  
+  const currentDayNumber = 19812
+  updateTimetableForDay(currentDayNumber); //do I need to initialize here?? imma do it anyways
+
+
   function setDates(currentDayCount) {
     const dayInSec = 24 * 60 * 60 * 1000;
     const estShift = 5 * 60 * 60 * 1000;
@@ -35,9 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const daysFormat = days.map(
       (d) => `${months[d.getMonth()]} ${d.getDate()}`
     );
+
+    currentDay.textContent = daysFormat[0];
     dateRange.textContent = `${daysFormat[0]} - ${daysFormat[2]}`;
     nextDay.textContent = daysFormat[1];
     nextNextDay.textContent = daysFormat[2];
+
+    updateTimetableForDay(currentDayCount);
 
     // update modal
     const dateFormSelect = document.getElementById("dj-date");
