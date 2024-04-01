@@ -81,4 +81,26 @@ function concatNotNull(a1, a2, a3) {
   return result;
 }
 
-module.exports = { generateReport, getAllProducerAssigned, getAllDjAssigned };
+function makeUnique(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let inResult = false;
+    for (let j = 0; j < result.length; j++) {
+      if (arr[i].songTitle === result[j].songTitle) {
+        inResult = true;
+        break;
+      }
+    }
+    if (!inResult) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+module.exports = {
+  generateReport,
+  getAllProducerAssigned,
+  getAllDjAssigned,
+  makeUnique,
+};

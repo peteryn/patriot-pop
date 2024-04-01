@@ -48,8 +48,14 @@ router.get("/manager", async (req, res) => {
     producerAssignedSongs,
     djPlayedSongs
   );
-  const [producerAssignedNotPlayed, producerAndDjPlayed, djPlayedNotAssigned] =
+  let [producerAssignedNotPlayed, producerAndDjPlayed, djPlayedNotAssigned] =
     report;
+  reportHelper.makeUnique(producerAndDjPlayed);
+  producerAssignedNotPlayed = reportHelper.makeUnique(
+    producerAssignedNotPlayed
+  );
+  producerAndDjPlayed = reportHelper.makeUnique(producerAndDjPlayed);
+  djPlayedNotAssigned = reportHelper.makeUnique(djPlayedNotAssigned);
 
   djs = JSON.parse(djs); // TODO update this to use database instead
   const content = await ejs.renderFile("./views/pages/manager.ejs", {
