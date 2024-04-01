@@ -1,47 +1,23 @@
 <main>
-    <section id="left">
-      
-    <div class="song-panels">
-      <div class="panel">
-        <div class="panel-header">
-            <div class="song-actions">
-                <div class="song-cover">
-                    
-                    <img src="../images/pretty.png" alt="Song Cover">
-                </div>
-                
-                <div class="song-details">
-                  <p class="now-playing">Now Playing</p>
-                    <h2>Pretty Afternoon</h2>
-                    <p>Andrah</p>
-                    <p>NCS</p>
-                    
-                </div>
-                <div class="add-icon">
-                    <img src="../images/plus-icon.png" alt="Add to Playlist">
-                </div>
-                <div class="success-popup" style="display: none;">
-                  Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
-                </div>
-            </div>
-        </div>
-    </div>
+  <section id="left">
     
+  <div class="song-panels">
     <div class="panel">
       <div class="panel-header">
           <div class="song-actions">
               <div class="song-cover">
-                  <img src="/images/sumu.png" alt="Song Cover">
+                  <img src="../images/pretty.png" alt="Song Cover"class="album-icon">
               </div>
+              
               <div class="song-details">
                 <p class="now-playing">Now Playing</p>
-                  <h2>Karma</h2>
-                  <p>Ariadne</p>
+                  <h2>Pretty Afternoon</h2>
+                  <p>Andrah</p>
                   <p>NCS</p>
-                 
+                  
               </div>
-              <div class="add-icon">
-                  <img src="/images/plus-icon.png" alt="Add to Playlist">
+              <div class="add-icon" onclick="addToPlaylist('Example Song', 'Example Artist')">
+                  <img src="../images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
               </div>
               <div class="success-popup" style="display: none;">
                 Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
@@ -49,21 +25,22 @@
           </div>
       </div>
   </div>
+  
   <div class="panel">
     <div class="panel-header">
         <div class="song-actions">
             <div class="song-cover">
-                <img src="/images/galactic.png" alt="Song Cover">
+                <img src="/images/sumu.png" alt="Song Cover"class="album-icon">
             </div>
             <div class="song-details">
               <p class="now-playing">Now Playing</p>
-                <h2>Galatic</h2>
-                <p>Natty Lou</p>
+                <h2>Karma</h2>
+                <p>Ariadne</p>
                 <p>NCS</p>
-                <p class="now-playing">Now Playing</p>
+               
             </div>
             <div class="add-icon">
-                <img src="/images/plus-icon.png" alt="Add to Playlist">
+                <img src="/images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
             </div>
             <div class="success-popup" style="display: none;">
               Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
@@ -75,17 +52,17 @@
   <div class="panel-header">
       <div class="song-actions">
           <div class="song-cover">
-              <img src="/images/song-cover-icon.png" alt="Song Cover">
+              <img src="/images/galactic.png" alt="Song Cover"class="album-icon">
           </div>
           <div class="song-details">
             <p class="now-playing">Now Playing</p>
-              <h2>Song 4</h2>
-              <p>Artist 4</p>
-              <p>Album 4</p>
-              
+              <h2>Galatic</h2>
+              <p>Natty Lou</p>
+              <p>NCS</p>
+              <p class="now-playing">Now Playing</p>
           </div>
           <div class="add-icon">
-              <img src="../images/plus-icon.png" alt="Add to Playlist">
+              <img src="/images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
           </div>
           <div class="success-popup" style="display: none;">
             Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
@@ -93,35 +70,64 @@
       </div>
   </div>
 </div>
+<div class="panel">
+<div class="panel-header">
+    <div class="song-actions">
+        <div class="song-cover">
+            <img src="/images/song-cover-icon.png" alt="Song Cover"class="album-icon">
+        </div>
+        <div class="song-details">
+          <p class="now-playing">Now Playing</p>
+            <h2>Song 4</h2>
+            <p>Artist 4</p>
+            <p>Album 4</p>
+            
+        </div>
+        <div class="add-icon">
+          <img src="../images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
+        </div>
+        <div class="success-popup" style="display: none;">
+          Successfully Added Track. <span class="undo">Undo</span> <span class="close-popup">X</span>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 
 
 <div class="rightCenter">
 <div class="left-container">
-
+<form class="search-bar-container" id="search-form">
+  
+  <input type="text" id="search-bar" name="search" placeholder="Search">
+  <button type="submit" class="search-icon" aria-label="Search">
+   <div id="search-error" class="search-error" style="display:none; color: red;"></div>
+      <img src="../images/searchIcon.png" alt="Search" />
+  </button>
+</form>
 
 <div class="dj-profile">
-    <img src="../images/profile.png" alt="DJ Profile Picture">
+  <img src="../images/profile.png" alt="DJ Profile Picture">
 </div>
 <div class="featured-dj-panel">
-    <h2>Featured DJ</h2>
-    <button id="meet-dj-button" class="meet-dj-button">Meet the DJ</button>
+  <h2>Featured DJ</h2>
+  <button id="meet-dj-button" class="meet-dj-button">Meet the DJ</button>
 </div>
 <div class="suggested-djs-panel">
-    <h2>Suggested DJs</h2>
-    <div class="suggested-dj-item">
-        <img src="../images/profile.png" alt="Suggested DJ Icon">
-        <p>DJ Gary</p>
-    </div>
-    <div class="suggested-dj-item">
-        <img src="../images/profile.png" alt="Suggested DJ Icon">
-        <p>DJ Steve</p>
-    </div>
-    <div class="suggested-dj-item">
-        <img src="../images/profile.png" alt="Suggested DJ Icon">
-        <p>DJ Jessica</p>
-    </div>
-    
+  <h2>Suggested DJs</h2>
+  <div class="suggested-dj-item">
+      <img src="../images/profile.png" alt="Suggested DJ Icon">
+      <p>DJ Gary</p>
+  </div>
+  <div class="suggested-dj-item">
+      <img src="../images/profile.png" alt="Suggested DJ Icon">
+      <p>DJ Steve</p>
+  </div>
+  <div class="suggested-dj-item">
+      <img src="../images/profile.png" alt="Suggested DJ Icon">
+      <p>DJ Jessica</p>
+  </div>
+  
 </div>
 </div>
 </div>
@@ -129,300 +135,319 @@
 
 <section id="right">
 <div class="top-menu">
-  <div class="date-menu">
-    <i class="fa-solid fa-caret-left" style="padding-left: 0.5em"></i>
-    <h2>Feb 10 - Feb 12</h2>
-    <i class="fa-solid fa-caret-right" style="padding-right: 0.5em"></i>
-  </div>
- 
+<div class="date-menu">
+  <i class="fa-solid fa-caret-left" style="padding-left: 0.5em"></i>
+  <h2>Feb 10 - Feb 12</h2>
+  <i class="fa-solid fa-caret-right" style="padding-right: 0.5em"></i>
+</div>
+
 </div>
 <div id="time-table">
-  <table>
-    <tr>
-      <th>Today</th>
-      <th>Feb 11</th>
-      <th>Feb 12</th>
-    </tr>
-    <tr class="table-cell">
-      <td id="table-focus">
-        <div class="time-zone">
-          <div>
-            <h3>12am</h3>
-          </div>
-          <div>
-            <article class="dj-card">
-              <div class="dj-card-song-list scroll-style">
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>  
-              </div>
-              <div class="dj-info">
-                <h4>DJ Gary</h4>
-                <img src="../images/profile.png" alt="">
-              </div>
-            </article>
-          </div>
-          <div>
-            <h3>8am</h3>
-          </div>
-          <div>
-            
-          </div>
-          <div>
-            <h3>4pm</h3>
-          </div>
-          <div>
-            <!-- dj card -->
-          </div>
-          <div>
-            <h3>12am</h3>
-          </div>
+<table>
+  <tr>
+    <th>Today</th>
+    <th>Feb 11</th>
+    <th>Feb 12</th>
+  </tr>
+  <tr class="table-cell">
+    <td id="table-focus">
+      <div class="time-zone">
+        <div>
+          <h3>12am</h3>
         </div>
-      </td>
-      <td id="table-secondary" class="table-secondary">
-        <div class="time-zone">
-          <div>
-            <h3>12am</h3>
-          </div>
-          <div>
-            <article class="dj-card">
-              <div class="dj-card-song-list scroll-style">
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free </p>
-                  </div>
+        <div>
+          <article class="dj-card">
+            <div class="dj-card-song-list scroll-style">
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>  
               </div>
-              <div class="dj-info">
-                <h4>DJ Gary</h4>
-                <img src="../images/profile.png" alt="">
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
               </div>
-            </article>
-          </div>
-          <div>
-            <h3>8am</h3>
-          </div>
-          <div>
-            <!-- dj card -->
-            <article class="dj-card">
-              <div class="dj-card-song-list scroll-style">
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>  
               </div>
-              <div class="dj-info">
-                <h4>DJ Gary</h4>
-                <img src="../images/profile.png" alt="">
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
               </div>
-            </article>
-          </div>
-          <div>
-            <h3>4pm</h3>
-          </div>
-          <div>
-            <article class="dj-card">
-              <div class="dj-card-song-list scroll-style">
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="dj-info">
-                  <h4>DJ Gary</h4>
-                  <img src="../images/profile.png" alt="">
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-            </article>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>  
             </div>
-          <div>
-            <h3>12am</h3>
-          </div>
+            <div class="dj-info">
+              <h4>DJ Gary</h4>
+              <img src="../images/profile.png" alt="">
+            </div>
+          </article>
         </div>
-      </td>
-      <td class="table-secondary">
-        <div class="time-zone">
-          <div>
-            <h3>12am</h3>
+        <div>
+          <h3>8am</h3>
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          <h3>4pm</h3>
+        </div>
+        <div>
+          <!-- dj card -->
+        </div>
+        <div>
+          <h3>12am</h3>
+        </div>
+      </div>
+    </td>
+    <td id="table-secondary" class="table-secondary">
+      <div class="time-zone">
+        <div>
+          <h3>12am</h3>
+        </div>
+        <div>
+          <article class="dj-card">
+            <div class="dj-card-song-list scroll-style">
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free </p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>  
+            </div>
+            <div class="dj-info">
+              <h4>DJ Gary</h4>
+              <img src="../images/profile.png" alt="">
+            </div>
+          </article>
+        </div>
+        <div>
+          <h3>8am</h3>
+        </div>
+        <div>
+          <!-- dj card -->
+          <article class="dj-card">
+            <div class="dj-card-song-list scroll-style">
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>  
+            </div>
+            <div class="dj-info">
+              <h4>DJ Gary</h4>
+              <img src="../images/profile.png" alt="">
+            </div>
+          </article>
+        </div>
+        <div>
+          <h3>4pm</h3>
+        </div>
+        <div>
+          <article class="dj-card">
+            <div class="dj-card-song-list scroll-style">
+              </div>
+              <div class="dj-info">
+                <h4>DJ Gary</h4>
+                <img src="../images/profile.png" alt="">
+              </div>
+          </article>
           </div>
-          <div>
-            <article class="dj-card">
-              <div class="dj-card-song-list scroll-style">
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
+        <div>
+          <h3>12am</h3>
+        </div>
+      </div>
+    </td>
+    <td class="table-secondary">
+      <div class="time-zone">
+        <div>
+          <h3>12am</h3>
+        </div>
+        <div>
+          <article class="dj-card">
+            <div class="dj-card-song-list scroll-style">
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div> 
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
                 </div>
-                <div class="song-alt">
-                  <img src="../images/ncs.jpg" alt="">
-                  <div class="song-text">
-                    <p>T & Sugah x Primate - Set Me Free</p>
-                  </div>
-                </div>  
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div> 
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>
+              <div class="song-alt">
+                <img src="../images/ncs.jpg" alt="">
+                <div class="song-text">
+                  <p>T & Sugah x Primate - Set Me Free</p>
+                </div>
+              </div>  
+            </div>
+            <div class="dj-info">
+              <h4>DJ Gary</h4>
+              <img src="../images/profile.png" alt="">
+            </div>
+          </article>
+        </div>
+        <div>
+          <h3>8am</h3>
+        </div>
+        <div>
+         
+        </div>
+        <div>
+          <h3>4pm</h3>
+        </div>
+        <div>
+          <article class="dj-card">
+            <div class="dj-card-song-list scroll-style">
               </div>
               <div class="dj-info">
                 <h4>DJ Gary</h4>
@@ -430,32 +455,32 @@
               </div>
             </article>
           </div>
-          <div>
-            <h3>8am</h3>
-          </div>
-          <div>
-           
-          </div>
-          <div>
-            <h3>4pm</h3>
-          </div>
-          <div>
-            <article class="dj-card">
-              <div class="dj-card-song-list scroll-style">
-                </div>
-                <div class="dj-info">
-                  <h4>DJ Gary</h4>
-                  <img src="../images/profile.png" alt="">
-                </div>
-              </article>
-            </div>
-          <div>
-            <h3>12am</h3>
-          </div>
+        <div>
+          <h3>12am</h3>
         </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+    </td>
+  </tr>
+</table>
 </div>
 </section>
-  </main>
+</main>
+<div id="djModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="dj-name"></p>
+      <p id="dj-genre"></p>
+      <p id="dj-experience"></p>
+      <button id="repertoire" class = "repertoire">DJ's Repertoire</button>
+  </div>
+</div>
+
+<script src="djModal.js"></script>
+<script src="search.js"></script>
+<script src="songAdd.js"></script>
+<script>
+  function addToPlaylist(songTitle, artist) {
+      console.log(`Adding ${decodeURIComponent(songTitle)} by ${decodeURIComponent(artist)} to the playlist...`);
+   
+  }
+</script>

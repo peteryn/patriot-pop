@@ -92,12 +92,10 @@ module.exports = router;
 router.get("/dj", async (req, res) => {
   try {
     const djData = await someAsyncOperationToFetchDJData();
-    const content = await ejs.renderFile("./views/pages/dj.ejs", {
+    const panelsData = await fetchPanelsData();
+    res.render("pages/dj", { 
       dj: djData,
-    });
-    res.render("partials/base", {
-      pageTitle: "DJ",
-      content: content,
+      panels: panelsData, 
       activePage: "dj",
     });
   } catch (err) {
@@ -105,3 +103,4 @@ router.get("/dj", async (req, res) => {
     res.status(500).send("An error occurred while preparing the DJ page.");
   }
 });
+
