@@ -8,7 +8,7 @@ DJ (Yash Pravin Waikar)
 ## Setup Database
 Start mongodb in a separate tab with `mongosh`
 ```
-cd public/json
+cd models/json
 
 mongoimport --db patriotPop --collection day --file days.json --jsonArray
 ```
