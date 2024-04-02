@@ -81,11 +81,15 @@ router.post("/manager/adddj", (req, res) => {
     producerAssignedSongs: [],
     djPlayedSongs: [],
   };
-  const o = {
-    "dayNumber": dayCount,
-    "slot3": obj
+  let o;
+  console.log(slot)
+  if (slot == "slot2") {
+    o = {
+      dayNumber: dayCount,
+      "slot3": obj,
+    };
+    dayProvider.updateDay(dayCount, o);
   }
-  dayProvider.updateDay(dayCount, o)
   res.redirect("/manager");
 });
 
