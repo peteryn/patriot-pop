@@ -31,6 +31,10 @@ header {
     height: 26vh;
 }
 
+#notdj-song-box .song-box {
+    height: 26vh;
+}
+
 .report-section {
     width: 100%;
     border-bottom: 4px solid var(--bg-color);

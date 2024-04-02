@@ -19,7 +19,7 @@
     </div>
 
     <div id="dj-played" class="report-section">
-      <h3 class="section-title">DJ Played Songs</h3>
+      <h3 class="section-title">Producer Assigned and DJ Played</h3>
       <div id="dps-song-box" class="song-box scroll-style">
         <!-- populate using ./songs.js -->
         <% for (let i = 0; i < padp.length; i++) { %>
@@ -34,7 +34,7 @@
     </div>
 
     <div id="producer-dj" class="report-section">
-      <h3 class="section-title">Producer Songs Played By DJ</h3>
+      <h3 class="section-title">Songs Played By DJ But Not Assigned By Producer</h3>
       <div id="notdj-song-box" class="song-box scroll-style">
         <!-- populate using ./songs.js -->
         <% for (let i = 0; i < dpna.length; i++) { %>
@@ -60,9 +60,9 @@
       <div class="add-btn-div">
         <button type="button" id="schedule-dj-btn" class="add-btn">Schedule DJ</button>
       </div>
-      <div class="add-btn-div">
+      <!-- <div class="add-btn-div">
         <button type="button" id="add-dj-btn" class="add-btn">Add DJ</button>
-      </div>
+      </div> -->
     </div>
     <div id="time-table">
       <table>
@@ -77,8 +77,8 @@
               <div>
                 <h3>12am</h3>
               </div>
-              <div id="slot-1-1">
-                <article id="card-1-1" class="dj-card">
+              <div id="slot-1">
+                <!-- <article id="card-1-1" class="dj-card">
                   <div class="dj-card-song-list scroll-style">
                     <div class="song-alt">
                       <img src="../images/ncs.jpg" alt="">
@@ -142,18 +142,18 @@
                     </script>
                     <img src="../images/profile.png" alt="">
                   </div>
-                </article>
+                </article> -->
               </div>
               <div>
                 <h3>8am</h3>
               </div>
-              <div>
+              <div id="slot-2">
 
               </div>
               <div>
                 <h3>4pm</h3>
               </div>
-              <div>
+              <div id="slot-3">
                 <!-- dj card -->
               </div>
               <div>

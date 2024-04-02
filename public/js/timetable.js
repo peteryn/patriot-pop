@@ -1,36 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
   async function fetchDayData(dayNumber) {
     try {
-      const response = await fetch(`/api/timetable/${dayNumber}`);
+      const response = await fetch(`/api/day/${dayNumber}`);
       if (!response.ok) {
-        throw new Error('timetable.js line_6. Error fetching timetable');
+        throw new Error("timetable.js line_6. Error fetching timetable");
       }
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('timetable.js line_11. Error fetching DATA from timetable', error);
+      console.error(
+        "timetable.js line_11. Error fetching DATA from timetable",
+        error
+      );
     }
   }
 
   function generateTimeslotCard(timeslot) {
-    const card = document.createElement('article');
-    card.className = 'dj-card';
+    const card = document.createElement("article");
+    card.className = "dj-card";
 
-    const songList = document.createElement('div');
-    songList.className = 'dj-card-song-list scroll-style';
+    const songList = document.createElement("div");
+    songList.className = "dj-card-song-list scroll-style";
 
-    timeslot.producerAssignedSongs.forEach(song => {
-      const songDiv = document.createElement('div');
-      songDiv.className = 'song-alt';
+    timeslot.producerAssignedSongs.forEach((song) => {
+      const songDiv = document.createElement("div");
+      songDiv.className = "song-alt";
 
-      const img = document.createElement('img');
+      const img = document.createElement("img");
       img.src = `../images/${song.albumPictureName}`;
       img.alt = song.songTitle;
 
-      const songTextDiv = document.createElement('div');
-      songTextDiv.className = 'song-text';
+      const songTextDiv = document.createElement("div");
+      songTextDiv.className = "song-text";
 
-      const songP = document.createElement('p');
+      const songP = document.createElement("p");
       songP.textContent = `${song.artist} - ${song.songTitle}`;
 
       songTextDiv.appendChild(songP);
@@ -40,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
       songList.appendChild(songDiv);
     });
 
-    const djInfo = document.createElement('div');
-    djInfo.className = 'dj-info';
+    const djInfo = document.createElement("div");
+    djInfo.className = "dj-info";
 
-    const djName = document.createElement('h4');
+    const djName = document.createElement("h4");
     djName.textContent = timeslot.dj;
 
     djInfo.appendChild(djName);
@@ -56,28 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function updateTimetableForDay(dayNumber) {
     const dayData = await fetchDayData(dayNumber);
-  
+
     if (!dayData || dayData.length === 0) {
-      console.error('No data found for day', dayNumber);
+      console.error("No data found for day", dayNumber);
       return;
     }
-  
-    const slots = ['slot1', 'slot2', 'slot3']; //our 3-fixed slots format from days.json
+
+    const slots = ["slot1", "slot2", "slot3"]; //our 3-fixed slots format from days.json
     slots.forEach((slot, index) => {
       const containerId = `slot-${index + 1}`; // IDK if this is pulling container_ID this way actully will work; We will prob need to make changes to html to accomodate for 3: slot-1, slot-2, slot-3
       const container = document.getElementById(containerId);
-  
-      if (container && dayData[0][slot]) {
-        container.innerHTML = ''; 
-        const timeslotCard = generateTimeslotCard(dayData[0][slot]);
-        container.appendChild(timeslotCard);
+
+      if (container && dayData[slot]) {
+        if (dayData[slot].producerAssignedSongs.length > 0) {
+          container.innerHTML = "";
+          const timeslotCard = generateTimeslotCard(dayData[slot]);
+          container.appendChild(timeslotCard);
+        }
       }
     });
   }
-  
-  const currentDayNumber = 19812
-  updateTimetableForDay(currentDayNumber); //do I need to initialize here?? imma do it anyways
 
+  const currentDayNumber = 19814;
+  updateTimetableForDay(currentDayNumber); //do I need to initialize here?? imma do it anyways
 
   function setDates(currentDayCount) {
     const dayInSec = 24 * 60 * 60 * 1000;
@@ -137,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // let user click on arrows to navigate days
-  let currentDayCount = setDates(0);
+  let currentDayCount = setDates(currentDayNumber);
   const nextDayBtn = document.getElementById("next-day-btn");
   nextDayBtn.addEventListener("click", (e) => {
     currentDayCount = setDates(++currentDayCount);

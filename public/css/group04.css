@@ -111,6 +111,7 @@ main > section {
     display: flex; 
     align-items: center; 
     justify-content: start;
+    max-height: 52px;
 }
 
 .song img {

@@ -305,6 +305,72 @@
     {
         "dayNumber": 19814,
         "slot1": {
+            "dj": "Jessica",
+            "color": "none",
+            "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ],
+            "djPlayedSongs": [
+                {
+                    "songTitle": "pretty afternoon",
+                    "artist": "Andrah",
+                    "albumPictureName": "pretty.png"
+                },
+                {
+                    "songTitle": "Galactic",
+                    "artist": "Natty Lou",
+                    "albumPictureName": "galactic.png"
+                },
+                {
+                    "songTitle": "apart",
+                    "artist": "sumu",
+                    "albumPictureName": "sumu.png"
+                },
+                {
+                    "songTitle": "Set Me Free",
+                    "artist": "T & Sugah x Primate",
+                    "albumPictureName": "ncs.jpg"
+                }
+            ]
         },
         "slot2": {
             "dj": "Gary",
