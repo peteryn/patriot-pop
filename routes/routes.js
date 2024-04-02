@@ -73,7 +73,19 @@ router.get("/manager", async (req, res) => {
 });
 
 router.post("/manager/adddj", (req, res) => {
-  const a = req.body.djs;
+  const dayCount = Math.floor(req.body.djDate / (24 * 60 * 60 * 1000));
+  const slot = req.body.djTimeslot;
+  const obj = {
+    dj: req.body.djs,
+    color: req.body.djColor,
+    producerAssignedSongs: [],
+    djPlayedSongs: [],
+  };
+  const o = {
+    "dayNumber": dayCount,
+    "slot3": obj
+  }
+  dayProvider.updateDay(dayCount, o)
   res.redirect("/manager");
 });
 
@@ -93,9 +105,9 @@ router.get("/dj", async (req, res) => {
   try {
     const djData = await someAsyncOperationToFetchDJData();
     const panelsData = await fetchPanelsData();
-    res.render("pages/dj", { 
+    res.render("pages/dj", {
       dj: djData,
-      panels: panelsData, 
+      panels: panelsData,
       activePage: "dj",
     });
   } catch (err) {
@@ -103,4 +115,3 @@ router.get("/dj", async (req, res) => {
     res.status(500).send("An error occurred while preparing the DJ page.");
   }
 });
-

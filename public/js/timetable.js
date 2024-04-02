@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById(containerId);
 
       if (container && dayData[slot]) {
-        if (dayData[slot].producerAssignedSongs.length > 0) {
+        if (dayData[slot].dj != null) {
           container.innerHTML = "";
           const timeslotCard = generateTimeslotCard(dayData[slot]);
           container.appendChild(timeslotCard);
