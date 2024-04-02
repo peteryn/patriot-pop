@@ -82,7 +82,6 @@ router.post("/manager/adddj", (req, res) => {
     djPlayedSongs: [],
   };
   let o;
-  console.log(slot)
   if (slot == "slot2") {
     o = {
       dayNumber: dayCount,
