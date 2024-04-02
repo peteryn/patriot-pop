@@ -118,4 +118,15 @@ router.get("/dj", async (req, res) => {
     activePage: "dj",
   });
 });
+const searchSongs = require('./path/to/searchSongs');
+
+app.get('/search', async (req, res) => {
+  try {
+    const results = await searchSongs(req.query.search);
+    res.render('pages/dj', { searchResults: results, ...otherParams });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error occurred during the search.");
+  }
+});
 module.exports = router;
