@@ -103,6 +103,11 @@ router.get("/producer", async (req, res) => {
   });
 });
 
+router.post('/producer/adddj', (req, res) => {
+    res.redirect("/producer");
+});
+
+
 module.exports = router;
 //Dj routes
 

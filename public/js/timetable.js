@@ -36,6 +36,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const songP = document.createElement("p");
       songP.textContent = `${song.artist} - ${song.songTitle}`;
 
+      //Only for producer will integrate better later >>
+      const removeBtn = document.createElement("img");
+      removeBtn.src = "../images/delete_button.png";
+      removeBtn.alt = "Remove song";
+      removeBtn.className = "right-of-text";
+      removeBtn.onclick = function() { removeSong(songDiv); };
+
+      songDiv.appendChild(removeBtn);
+      songList.appendChild(songDiv);
+
+      //Only for producer will integrate better later ^^
+
       songTextDiv.appendChild(songP);
       songDiv.appendChild(img);
       songDiv.appendChild(songTextDiv);
@@ -127,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateTimetableForDay(currentDayCount);
 
-    // update modal
+    // // update modal
     const dateFormSelect = document.getElementById("dj-date");
     const daysOptions = days.map(
       (d) =>
@@ -144,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentDayCount = setDates(currentDayNumber);
   const nextDayBtn = document.getElementById("next-day-btn");
   nextDayBtn.addEventListener("click", (e) => {
+    console.log("line 147")
     currentDayCount = setDates(++currentDayCount);
   });
   const prevDayBtn = document.getElementById("prev-day-btn");
