@@ -26,7 +26,7 @@ router.get("/api/day/:dayNumber", async (req, res) => {
 // Manager Routes
 router.get("/manager", async (req, res) => {
   let djs = await fs.promises.readFile(
-    "./public/json/djs.json",
+    "./models/json/djs.json",
     "utf8",
     (err, data) => {
       return JSON.parse(data);

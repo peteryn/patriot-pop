@@ -12,5 +12,4 @@ app.use("/", routes);
 const port = 8080
 app.listen(port, () => {
   console.log(`localhost/Express listening at port ${port}`);
-  console.log(`manger url at localhost:${port}/manager`)
 });
