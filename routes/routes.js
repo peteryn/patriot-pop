@@ -33,7 +33,7 @@ router.get("/manager", async (req, res) => {
     }
   );
 
-  const dayNumber = 19814; // TODO use real time when in production
+  const dayNumber = 19814 // TODO use real time when in production
   const data = await dayProvider.getDay(dayNumber);
   if (data.dayNumber == null) {
     // write code to display nothing
@@ -107,7 +107,6 @@ router.post('/producer/adddj', (req, res) => {
 });
 
 
-module.exports = router;
 //Dj routes
 
 router.get("/dj", async (req, res) => {
@@ -118,9 +117,9 @@ router.get("/dj", async (req, res) => {
     activePage: "dj",
   });
 });
-const searchSongs = require('./path/to/searchSongs');
+// const searchSongs = require('./path/to/searchSongs');
 
-app.get('/search', async (req, res) => {
+router.get('/search', async (req, res) => {
   try {
     const results = await searchSongs(req.query.search);
     res.render('pages/dj', { searchResults: results, ...otherParams });
