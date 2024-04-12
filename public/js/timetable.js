@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function generateTimeslotCard(timeslot) {
     const card = document.createElement("article");
     card.className = "dj-card";
-
     const songList = document.createElement("div");
     songList.className = "dj-card-song-list scroll-style";
 
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       songDiv.appendChild(removeBtn);
       songList.appendChild(songDiv);
-
       //Only for producer will integrate better later ^^
 
       songTextDiv.appendChild(songP);

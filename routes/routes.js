@@ -58,11 +58,13 @@ router.get("/manager", async (req, res) => {
   djPlayedNotAssigned = reportHelper.makeUnique(djPlayedNotAssigned);
 
   djs = JSON.parse(djs); // TODO update this to use database instead
+  const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
   const content = await ejs.renderFile("./views/pages/manager.ejs", {
     djs: djs,
     panp: producerAssignedNotPlayed,
     padp: producerAndDjPlayed,
     dpna: djPlayedNotAssigned,
+    timetable: timetable,
   });
 
   res.render("partials/base", {
