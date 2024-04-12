@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // generates the article and everything inside of it
   function generateTimeslotCard(timeslot) {
     const card = document.createElement("article");
     card.className = "dj-card";
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   }
 
-  async function updateTimetableForDay(dayNumber) {
+  async function updateTimetableForDay(dayNumber, columnNumber) {
     const dayData = await fetchDayData(dayNumber);
 
     if (!dayData || dayData.length === 0) {
@@ -77,14 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const slots = ["slot1", "slot2", "slot3"]; //our 3-fixed slots format from days.json
+    const slots = ["slot1", "slot2", "slot3"]; 
     slots.forEach((slot, index) => {
-      const containerId = `slot-${index + 1}`; // IDK if this is pulling container_ID this way actully will work; We will prob need to make changes to html to accomodate for 3: slot-1, slot-2, slot-3
+      const containerId = `slot-${columnNumber}-${index + 1}`; 
       const container = document.getElementById(containerId);
 
+      container.innerHTML = "";
       if (container && dayData[slot]) {
         if (dayData[slot].dj != null) {
-          container.innerHTML = "";
           const timeslotCard = generateTimeslotCard(dayData[slot]);
           container.appendChild(timeslotCard);
         }
@@ -92,9 +93,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const currentDayNumber = 19814;
-  updateTimetableForDay(currentDayNumber); //do I need to initialize here?? imma do it anyways
+  async function updateTimeTable(startingDayNumber) {
+    updateTimetableForDay(startingDayNumber, 1); 
+    updateTimetableForDay(startingDayNumber + 1, 2); 
+    updateTimetableForDay(startingDayNumber + 2, 3); 
+  }
 
+  const currentDayNumber = 19814;
+  // updateTimetableForDay(currentDayNumber); //do I need to initialize here?? imma do it anyways
+  updateTimeTable(currentDayNumber);
+
+  // sets the column headers
   function setDates(currentDayCount) {
     const dayInSec = 24 * 60 * 60 * 1000;
     const estShift = 5 * 60 * 60 * 1000;
@@ -137,7 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
     nextDay.textContent = daysFormat[1];
     nextNextDay.textContent = daysFormat[2];
 
-    updateTimetableForDay(currentDayCount);
+    // updateTimetableForDay(currentDayCount);
+    updateTimeTable(currentDayCount);
 
     // // update modal
     const dateFormSelect = document.getElementById("dj-date");
@@ -152,16 +162,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return currentDayCount;
   }
 
+  // other events
   // let user click on arrows to navigate days
   let currentDayCount = setDates(currentDayNumber);
   const nextDayBtn = document.getElementById("next-day-btn");
-  nextDayBtn.addEventListener("click", (e) => {
-    console.log("line 147")
+  nextDayBtn.addEventListener("click", () => {
     currentDayCount = setDates(++currentDayCount);
+    // updateTimeTable(currentDayNumber);
   });
   const prevDayBtn = document.getElementById("prev-day-btn");
-  prevDayBtn.addEventListener("click", (e) => {
+  prevDayBtn.addEventListener("click", () => {
     currentDayCount = setDates(--currentDayCount);
+    // updateTimeTable(currentDayNumber);
   });
 
   // let user use arrow keys to navigate days
@@ -177,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // let user enlarge dj names
   const djNames = document.querySelectorAll(".dj-info h4");
   for (let dj of djNames) {
-    dj.addEventListener("dblclick", (e) => {
+    dj.addEventListener("dblclick", () => {
       let fontSize = dj.style.fontSize;
       fontSize = fontSize.slice(0, -2);
 
