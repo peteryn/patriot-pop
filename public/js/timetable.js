@@ -36,16 +36,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const songP = document.createElement("p");
       songP.textContent = `${song.artist} - ${song.songTitle}`;
 
-      //Only for producer will integrate better later >>
-      const removeBtn = document.createElement("img");
-      removeBtn.src = "../images/delete_button.png";
-      removeBtn.alt = "Remove song";
-      removeBtn.className = "right-of-text";
-      removeBtn.onclick = function() { removeSong(songDiv); };
+      var path = window.location.pathname;
+      var page = path.split("/").pop();
+      console.log(page);
 
-      songDiv.appendChild(removeBtn);
-      songList.appendChild(songDiv);
-      //Only for producer will integrate better later ^^
+      if (page === "prdocuer") {
+        //Only for producer will integrate better later >>
+        const removeBtn = document.createElement("img");
+        removeBtn.src = "../images/delete_button.png";
+        removeBtn.alt = "Remove song";
+        removeBtn.className = "right-of-text";
+        removeBtn.onclick = function () {
+          removeSong(songDiv);
+        };
+
+        songDiv.appendChild(removeBtn);
+        songList.appendChild(songDiv);
+        //Only for producer will integrate better later ^^
+      }
 
       songTextDiv.appendChild(songP);
       songDiv.appendChild(img);
@@ -76,9 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const slots = ["slot1", "slot2", "slot3"]; 
+    const slots = ["slot1", "slot2", "slot3"];
     slots.forEach((slot, index) => {
-      const containerId = `slot-${columnNumber}-${index + 1}`; 
+      const containerId = `slot-${columnNumber}-${index + 1}`;
       const container = document.getElementById(containerId);
 
       container.innerHTML = "";
@@ -92,9 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function updateTimeTable(startingDayNumber) {
-    updateTimetableForDay(startingDayNumber, 1); 
-    updateTimetableForDay(startingDayNumber + 1, 2); 
-    updateTimetableForDay(startingDayNumber + 2, 3); 
+    updateTimetableForDay(startingDayNumber, 1);
+    updateTimetableForDay(startingDayNumber + 1, 2);
+    updateTimetableForDay(startingDayNumber + 2, 3);
   }
 
   const currentDayNumber = 19814;
