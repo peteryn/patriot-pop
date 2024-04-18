@@ -16,12 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // generates the article and everything inside of it
-  function generateTimeslotCard(timeslot) {
+  function generateTimeslotCard(timeslot, columnNumber, index) {
     const card = document.createElement("article");
     card.className = "dj-card";
     const songList = document.createElement("div");
     songList.className = "dj-card-song-list scroll-style";
 
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
     timeslot.producerAssignedSongs.forEach((song) => {
       const songDiv = document.createElement("div");
       songDiv.className = "song-alt";
@@ -36,9 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const songP = document.createElement("p");
       songP.textContent = `${song.artist} - ${song.songTitle}`;
 
-      var path = window.location.pathname;
-      var page = path.split("/").pop();
-      console.log(page);
 
       if (page === "prdocuer") {
         //Only for producer will integrate better later >>
@@ -62,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       songList.appendChild(songDiv);
     });
 
+
     const djInfo = document.createElement("div");
     djInfo.className = "dj-info";
 
@@ -70,6 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     djInfo.appendChild(djName);
 
+    //if (page === "manager" && columnNumber == 1) {
+    if (page === "manager") {
+      const removeBtn = document.createElement("button");
+      removeBtn.id = "remove-dj-btn";
+      console.log(`slot-${columnNumber}-${index+1}`)
+      removeBtn.onclick = () => {
+        const innerSlot = document.getElementById(`slot-${columnNumber}-${index+1}`);
+        if (confirm("Remove DJ?")) {
+          innerSlot.innerHTML = "";
+        }
+      }
+      removeBtn.textContent = "Remove";
+      djInfo.appendChild(removeBtn);
+    }
     card.appendChild(songList);
     card.appendChild(djInfo);
 
@@ -92,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = "";
       if (container && dayData[slot]) {
         if (dayData[slot].dj != null) {
-          const timeslotCard = generateTimeslotCard(dayData[slot]);
+          const timeslotCard = generateTimeslotCard(dayData[slot], columnNumber, index);
           container.appendChild(timeslotCard);
         }
       }
