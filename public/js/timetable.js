@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // generates the article and everything inside of it
-  function generateTimeslotCard(timeslot, columnNumber, index) {
+  function generateTimeslotCard(timeslot, columnNumber, index, dayNumber) {
     const card = document.createElement("article");
     card.className = "dj-card";
     const songList = document.createElement("div");
@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const songP = document.createElement("p");
       songP.textContent = `${song.artist} - ${song.songTitle}`;
-
 
       if (page === "prdocuer") {
         //Only for producer will integrate better later >>
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
       songList.appendChild(songDiv);
     });
 
-
     const djInfo = document.createElement("div");
     djInfo.className = "dj-info";
 
@@ -72,17 +70,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //if (page === "manager" && columnNumber == 1) {
     if (page === "manager") {
-      const removeBtn = document.createElement("button");
+      const removeForm = document.createElement("form");
+      removeForm.setAttribute(
+        "action",
+        "http://localhost:8080/manager/deleteSlot"
+      );
+      removeForm.setAttribute("method", "POST");
+
+      const removeBtn = document.createElement("input");
+      removeBtn.type = "submit";
+      removeBtn.name = "delete";
+      removeBtn.value = "Remove";
       removeBtn.id = "remove-dj-btn";
-      console.log(`slot-${columnNumber}-${index+1}`)
-      removeBtn.onclick = () => {
-        const innerSlot = document.getElementById(`slot-${columnNumber}-${index+1}`);
-        if (confirm("Remove DJ?")) {
-          innerSlot.innerHTML = "";
-        }
-      }
-      removeBtn.textContent = "Remove";
-      djInfo.appendChild(removeBtn);
+
+      const hiddenDayNumber = document.createElement("input");
+      hiddenDayNumber.value = dayNumber;
+      hiddenDayNumber.style.display = "none";
+      hiddenDayNumber.name = "dayNumber";
+
+      const hiddenSlotNumber = document.createElement("input");
+      hiddenSlotNumber.value = index;
+      hiddenSlotNumber.style.display = "none";
+      hiddenSlotNumber.name = "slotNumber";
+
+      removeForm.appendChild(hiddenDayNumber);
+      removeForm.appendChild(hiddenSlotNumber);
+
+      removeForm.appendChild(removeBtn);
+      djInfo.appendChild(removeForm);
     }
     card.appendChild(songList);
     card.appendChild(djInfo);
@@ -104,9 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById(containerId);
 
       container.innerHTML = "";
+      if (dayNumber == 19814) {
+        console.log(dayData)
+      }
       if (container && dayData[slot]) {
         if (dayData[slot].dj != null) {
-          const timeslotCard = generateTimeslotCard(dayData[slot], columnNumber, index);
+          const timeslotCard = generateTimeslotCard(
+            dayData[slot],
+            columnNumber,
+            index,
+            dayNumber
+          );
           container.appendChild(timeslotCard);
         }
       }

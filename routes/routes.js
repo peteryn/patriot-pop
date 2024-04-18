@@ -22,6 +22,22 @@ router.get("/api/day/:dayNumber", async (req, res) => {
 // TODO: add put API for when timeslot changes
 
 // TODO: add delete API for when timeslot is deleted
+router.post("/manager/deleteSlot", async (req, res) => {
+  const dayNumber = req.body.dayNumber;
+  const slotIndex = parseInt(req.body.slotNumber) + 1; // 0 indexed
+  const slotString = `slot${slotIndex}`;
+  const dayToUpdate = await dayProvider.getDay(dayNumber);
+  
+  const slotToClear = dayToUpdate[slotString]
+  slotToClear.dj = null;
+  slotToClear.color = null;
+  slotToClear.producerAssignedSongs = [];
+  slotToClear.djPlayedSongs = [];
+
+  dayToUpdate[slotString] = slotToClear;
+  dayProvider.updateDay(dayNumber, dayToUpdate)
+  res.redirect("/manager");
+});
 
 // Manager Routes
 router.get("/manager", async (req, res) => {
@@ -33,7 +49,7 @@ router.get("/manager", async (req, res) => {
     }
   );
 
-  const dayNumber = 19814 // TODO use real time when in production
+  const dayNumber = 19814; // TODO use real time when in production
   const data = await dayProvider.getDay(dayNumber);
   if (data.dayNumber == null) {
     // write code to display nothing
@@ -87,7 +103,7 @@ router.post("/manager/adddj", (req, res) => {
   if (slot == "slot2") {
     o = {
       dayNumber: dayCount,
-      "slot3": obj,
+      slot3: obj,
     };
     dayProvider.updateDay(dayCount, o);
   }
@@ -104,10 +120,9 @@ router.get("/producer", async (req, res) => {
   });
 });
 
-router.post('/producer/adddj', (req, res) => {
-    res.redirect("/producer");
+router.post("/producer/adddj", (req, res) => {
+  res.redirect("/producer");
 });
-
 
 //Dj routes
 
@@ -121,13 +136,14 @@ router.get("/dj", async (req, res) => {
 });
 // const searchSongs = require('./path/to/searchSongs');
 
-router.get('/search', async (req, res) => {
+router.get("/search", async (req, res) => {
   try {
     const results = await searchSongs(req.query.search);
-    res.render('pages/dj', { searchResults: results, ...otherParams });
+    res.render("pages/dj", { searchResults: results, ...otherParams });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error occurred during the search.");
   }
 });
+
 module.exports = router;
