@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/dj.css">
+<link rel="stylesheet" href="/css/group04.css">
 <main>
   <section id="left">
 
@@ -40,7 +41,7 @@
                 <p>NCS</p>
                
             </div>
-            <div class="add-icon" onclick="addToPlaylist('Example Song', 'Example Artist')">
+            <div class="add-icon" onclick="addToPlaylist('Karma', 'Ariadne')">
                 <img src="/images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
             </div>
             <div class="success-popup" style="display: none;">
@@ -62,7 +63,7 @@
               <p>NCS</p>
               <p class="now-playing">Now Playing</p>
           </div>
-          <div class="add-icon" onclick="addToPlaylist('Example Song', 'Example Artist')">
+          <div class="add-icon" onclick="addToPlaylist('Galatic', 'Natty Lou')">
               <img src="/images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
           </div>
           <div class="success-popup" style="display: none;">
@@ -474,9 +475,9 @@
   </div>
 </div>
 
-<script src="djModal.js"></script>
-<script src="search.js"></script>
-<script src="songAdd.js"></script>
+<script src="js/DJModal.js"></script>
+<script src="js/DJsearch.js"></script>
+<script src="js/DJsongAdd.js"></script>
 <script>
   function addToPlaylist(songTitle, artist) {
       console.log(`Adding ${decodeURIComponent(songTitle)} by ${decodeURIComponent(artist)} to the playlist...`);
