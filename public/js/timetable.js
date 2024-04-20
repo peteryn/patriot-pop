@@ -119,9 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById(containerId);
 
       container.innerHTML = "";
-      if (dayNumber == 19814) {
-        //console.log(dayData)
-      }
       if (container && dayData[slot]) {
         if (dayData[slot].dj != null) {
           const timeslotCard = generateTimeslotCard(
@@ -142,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTimetableForDay(startingDayNumber + 2, 3);
   }
 
-  const currentDayNumber = 19814;
+  const currentDayNumber = 19839;
   // updateTimetableForDay(currentDayNumber); //do I need to initialize here?? imma do it anyways
   updateTimeTable(currentDayNumber);
 

@@ -52,7 +52,7 @@ router.get("/manager", async (req, res) => {
   );
   djs = await djProvider.getAllDjs();
 
-  const dayNumber = 19814; // TODO use real time when in production
+  const dayNumber = 19839; // TODO use real time when in production
   const data = await dayProvider.getDay(dayNumber);
   if (data.dayNumber == null) {
     // write code to display nothing
