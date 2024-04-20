@@ -6,6 +6,7 @@ const fs = require("fs");
 
 const dayProvider = require("../models/dayProvider");
 const reportHelper = require("./helper/report");
+const day = require("../models/day");
 
 // timetable api
 router.get("/api/day/:dayNumber", async (req, res) => {
@@ -90,24 +91,28 @@ router.get("/manager", async (req, res) => {
   });
 });
 
-router.post("/manager/adddj", (req, res) => {
+router.post("/manager/adddj", async (req, res) => {
   const dayCount = Math.floor(req.body.djDate / (24 * 60 * 60 * 1000));
   const slot = req.body.djTimeslot;
-  const obj = {
-    dj: req.body.djs,
-    color: req.body.djColor,
-    producerAssignedSongs: [],
-    djPlayedSongs: [],
-  };
-  let o;
-  if (slot == "slot2") {
-    o = {
-      dayNumber: dayCount,
-      slot3: obj,
+
+  const oldDay = await dayProvider.getDay(dayCount);
+  if (oldDay[slot].dj != null) {
+    res.redirect("/manager")
+  } else {
+    let djNameTemp = req.body.djs;
+    djNameTemp = djNameTemp.charAt(0).toUpperCase() + djNameTemp.slice(1);
+    const obj = {
+      dj: djNameTemp,
+      color: req.body.djColor,
+      producerAssignedSongs: [],
+      djPlayedSongs: [],
     };
-    dayProvider.updateDay(dayCount, o);
+    const updatedDay = oldDay;
+    updatedDay[slot] = obj;
+    console.log(updatedDay);
+    dayProvider.updateDay(dayCount, updatedDay);
+    res.redirect("/manager");
   }
-  res.redirect("/manager");
 });
 
 // Producer Routes

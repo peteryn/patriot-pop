@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       container.innerHTML = "";
       if (dayNumber == 19814) {
-        console.log(dayData)
+        //console.log(dayData)
       }
       if (container && dayData[slot]) {
         if (dayData[slot].dj != null) {

@@ -17,10 +17,32 @@ async function getDay(dayNumber) {
   try {
     data = await Day.findOne(query).exec();
   } catch (err) {
-    data = {};
+    data = {
+      dayNumber: dayNumber,
+      slot1: {
+        dj: null
+      },
+      slot2: {
+        dj: null
+      },
+      slot3: {
+        dj: null
+      },
+    };
   }
   if (data == null) {
-    data = {};
+    data = {
+      dayNumber: dayNumber,
+      slot1: {
+        dj: null
+      },
+      slot2: {
+        dj: null
+      },
+      slot3: {
+        dj: null
+      },
+    };
   }
   return data;
 }
@@ -34,16 +56,30 @@ async function addDay(dayData) {
   }
 }
 
+// will create field if it does not exist
 async function updateDay(dayNumber, updateData) {
+  let query = { dayNumber: dayNumber };
+  let data;
   try {
-    let updatedDay = await Day.findOneAndUpdate(
-      { dayNumber: dayNumber },
-      { $set: updateData },
-      { new: true, runValidators: true }
-    );
-    return updatedDay;
+    data = await Day.findOne(query).exec();
   } catch (err) {
-    throw err;
+    data = null;
+  }
+
+  if (data == null) {
+    addDay(updateData);
+  } else {
+    console.log("here correct")
+    try {
+      let updatedDay = await Day.findOneAndUpdate(
+        { dayNumber: dayNumber },
+        { $set: updateData },
+        { new: true, runValidators: true }
+      );
+      return updatedDay;
+    } catch (err) {
+      throw err;
+    }
   }
 }
 
