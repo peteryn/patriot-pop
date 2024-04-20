@@ -11,4 +11,5 @@ Start mongodb in a separate tab with `mongosh`
 cd models/json
 
 mongoimport --db patriotPop --collection day --file days.json --jsonArray
+mongoimport --db patriotPop --collection dj --file djs.json --jsonArray
 ```

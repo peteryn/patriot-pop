@@ -5,6 +5,7 @@ const ejs = require("ejs");
 const fs = require("fs");
 
 const dayProvider = require("../models/dayProvider");
+const djProvider = require("../models/djProvider");
 const reportHelper = require("./helper/report");
 const day = require("../models/day");
 
@@ -49,6 +50,7 @@ router.get("/manager", async (req, res) => {
       return JSON.parse(data);
     }
   );
+  djs = await djProvider.getAllDjs();
 
   const dayNumber = 19814; // TODO use real time when in production
   const data = await dayProvider.getDay(dayNumber);
@@ -74,7 +76,7 @@ router.get("/manager", async (req, res) => {
   producerAndDjPlayed = reportHelper.makeUnique(producerAndDjPlayed);
   djPlayedNotAssigned = reportHelper.makeUnique(djPlayedNotAssigned);
 
-  djs = JSON.parse(djs); // TODO update this to use database instead
+  // djs = JSON.parse(djs); // TODO update this to use database instead
   const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
   const content = await ejs.renderFile("./views/pages/manager.ejs", {
     djs: djs,
