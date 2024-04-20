@@ -134,7 +134,10 @@ router.post("/producer/adddj", (req, res) => {
 //Dj routes
 
 router.get("/dj", async (req, res) => {
-  const content = await ejs.renderFile("./views/pages/dj.ejs");
+  const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
+  const content = await ejs.renderFile("./views/pages/dj.ejs", {
+    timetable: timetable,
+  });
   res.render("partials/base", {
     pageTitle: "DJ",
     content: content,
@@ -145,6 +148,7 @@ router.get("/dj", async (req, res) => {
 
 router.get("/search", async (req, res) => {
   try {
+    const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
     const results = await searchSongs(req.query.search);
     res.render("pages/dj", { searchResults: results, ...otherParams });
   } catch (error) {
