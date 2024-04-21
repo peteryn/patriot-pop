@@ -1,50 +1,23 @@
 <main>
   <section id="left">
     <header>
-      <h2 style="font-size: 2em">Today's Report</h2>
+      <h2 id="report-title" style="font-size: 2em">Today's Report</h2>
     </header>
     <div id="producer-not-player" class="report-section">
       <h3 class="section-title">Producer Songs Not Played</h3>
       <div id="pnp-song-box" class="song-box scroll-style">
-        <!-- populate using ./songs.js -->
-        <% for (let i = 0; i < panp.length; i++) { %>
-          <div class="song">
-            <img src="/images/<%= panp[i].albumPictureName%>" alt="">
-            <div class="song-text">
-              <p><%= panp[i].artist %> - <%= panp[i].songTitle %></p>
-            </div>
-          </div>
-        <% } %>
       </div>
     </div>
 
     <div id="dj-played" class="report-section">
       <h3 class="section-title">Producer Assigned and DJ Played</h3>
       <div id="dps-song-box" class="song-box scroll-style">
-        <!-- populate using ./songs.js -->
-        <% for (let i = 0; i < padp.length; i++) { %>
-          <div class="song">
-            <img src="/images/<%= padp[i].albumPictureName%>" alt="">
-            <div class="song-text">
-              <p><%= padp[i].artist %> - <%= padp[i].songTitle %></p>
-            </div>
-          </div>
-        <% } %>
       </div>
     </div>
 
     <div id="producer-dj" class="report-section">
       <h3 class="section-title">Songs Played By DJ But Not Assigned By Producer</h3>
       <div id="notdj-song-box" class="song-box scroll-style">
-        <!-- populate using ./songs.js -->
-        <% for (let i = 0; i < dpna.length; i++) { %>
-          <div class="song">
-            <img src="/images/<%= dpna[i].albumPictureName%>" alt="">
-            <div class="song-text">
-              <p><%= dpna[i].artist %> - <%= dpna[i].songTitle %></p>
-            </div>
-          </div>
-        <% } %>
       </div>
     </div>
     <!-- <h2>Double click DJ name to enlarge</h2>

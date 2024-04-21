@@ -43,49 +43,17 @@ router.post("/manager/deleteSlot", async (req, res) => {
 
 // Manager Routes
 router.get("/manager", async (req, res) => {
-  let djs = await fs.promises.readFile(
-    "./models/json/djs.json",
-    "utf8",
-    (err, data) => {
-      return JSON.parse(data);
-    }
-  );
-  djs = await djProvider.getAllDjs();
-
+  const djs = await djProvider.getAllDjs();
   const dayNumber = 19839; // TODO use real time when in production
-  const data = await dayProvider.getDay(dayNumber);
-  if (data.dayNumber == null) {
-    // write code to display nothing
-  }
 
-  const producerAssignedSongs = reportHelper.getAllProducerAssigned(data);
-  const djPlayedSongs = reportHelper.getAllDjAssigned(data);
-  // console.log(producerAssignedSongs)
-  // TODO: need to combine the song information from all three timeslots
-  // then pass into generate report
-  const report = reportHelper.generateReport(
-    producerAssignedSongs,
-    djPlayedSongs
-  );
-  let [producerAssignedNotPlayed, producerAndDjPlayed, djPlayedNotAssigned] =
-    report;
-  reportHelper.makeUnique(producerAndDjPlayed);
-  producerAssignedNotPlayed = reportHelper.makeUnique(
-    producerAssignedNotPlayed
-  );
-  producerAndDjPlayed = reportHelper.makeUnique(producerAndDjPlayed);
-  djPlayedNotAssigned = reportHelper.makeUnique(djPlayedNotAssigned);
-
-  // djs = JSON.parse(djs); // TODO update this to use database instead
   const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
   const content = await ejs.renderFile("./views/pages/manager.ejs", {
     djs: djs,
-    panp: producerAssignedNotPlayed,
-    padp: producerAndDjPlayed,
-    dpna: djPlayedNotAssigned,
     timetable: timetable,
   });
 
+  // res.cookie("dayNumber", dayNumber);
+  // res.cookie("test", "test");
   res.render("partials/base", {
     pageTitle: "Manager",
     content: content,

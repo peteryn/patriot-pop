@@ -1,3 +1,6 @@
+import { getCookieDict, calculateNextDayExpiry } from "./cookie.js";
+import { populateAll } from "./report.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   async function fetchDayData(dayNumber) {
     try {
@@ -139,9 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTimetableForDay(startingDayNumber + 2, 3);
   }
 
-  const currentDayNumber = 19839;
-  // updateTimetableForDay(currentDayNumber); //do I need to initialize here?? imma do it anyways
+  const cookieDict = getCookieDict();
+  const currentDayNumber = parseInt(cookieDict.currentDayCount);
   updateTimeTable(currentDayNumber);
+  let currentDayCount = setDates(currentDayNumber);
 
   // sets the column headers
   function setDates(currentDayCount) {
@@ -204,16 +208,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // other events
   // let user click on arrows to navigate days
-  let currentDayCount = setDates(currentDayNumber);
   const nextDayBtn = document.getElementById("next-day-btn");
   nextDayBtn.addEventListener("click", () => {
     currentDayCount = setDates(++currentDayCount);
+    const expiresDate = calculateNextDayExpiry()
+    document.cookie = `currentDayCount=${currentDayCount};expires=${expiresDate}`;
     // updateTimeTable(currentDayNumber);
+    populateAll();
   });
   const prevDayBtn = document.getElementById("prev-day-btn");
   prevDayBtn.addEventListener("click", () => {
     currentDayCount = setDates(--currentDayCount);
+    const expiresDate = calculateNextDayExpiry()
+    document.cookie = `currentDayCount=${currentDayCount};expires=${expiresDate}`;
     // updateTimeTable(currentDayNumber);
+    populateAll();
   });
 
   // let user use arrow keys to navigate days
@@ -224,6 +233,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key == "ArrowRight") {
       currentDayCount = setDates(++currentDayCount);
     }
+    const expiresDate = calculateNextDayExpiry()
+    document.cookie = `currentDayCount=${currentDayCount};expires=${expiresDate}`;
+    // populateAll();
   });
 
   // let user enlarge dj names
