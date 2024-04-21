@@ -152,10 +152,11 @@ nav ul li {
     height: 25px; 
     width: auto;
 }
-#left {
+#leftDJ {
     display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start;
+    flex-direction: row;  /* Ensure this is row to lay items horizontally */
+    align-items: start; /* Aligns items at the start of the flex container */
+    width: 100%;
   }
   .song-panels {
     display: flex; 
