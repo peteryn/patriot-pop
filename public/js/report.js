@@ -142,9 +142,14 @@ function makeUnique(arr) {
 async function populateAll() {
   const cookieDict = getCookieDict();
   const dayNumber = parseInt(cookieDict.currentDayCount);
-  console.log(`inside report ${dayNumber}`);
   // const dayNumber = 19839; // TODO use real time when in production
   const data = await fetchDayData(dayNumber);
+  if (data == undefined) {
+    populateReport("pnp-song-box", []);
+    populateReport("dps-song-box", []);
+    populateReport("notdj-song-box", []);
+    return;
+  }
   const producerAssignedSongs = getAllProducerAssigned(data);
   const djPlayedSongs = getAllDjAssigned(data);
   // console.log(producerAssignedSongs)
@@ -183,7 +188,9 @@ async function populateAll() {
   const dayInSec = 24 * 60 * 60 * 1000;
   const estShift = 5 * 60 * 60 * 1000;
   const today = new Date(dayNumber * dayInSec + estShift);
-  reportTitle.innerText = `${months[today.getMonth()]} ${today.getDate()}'s Report`
+  reportTitle.innerText = `${
+    months[today.getMonth()]
+  } ${today.getDate()}'s Report`;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

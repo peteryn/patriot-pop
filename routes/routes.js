@@ -3,11 +3,14 @@ const express = require("express");
 const router = express.Router();
 const ejs = require("ejs");
 const fs = require("fs");
+var bodyParser = require('body-parser')
 
 const dayProvider = require("../models/dayProvider");
 const djProvider = require("../models/djProvider");
 const reportHelper = require("./helper/report");
 const day = require("../models/day");
+
+const jsonParser = bodyParser.json()
 
 // timetable api
 router.get("/api/day/:dayNumber", async (req, res) => {
@@ -19,14 +22,10 @@ router.get("/api/day/:dayNumber", async (req, res) => {
   res.json(data);
 });
 
-// TODO: add post API for when manager adds a new timeslot
-
-// TODO: add put API for when timeslot changes
-
-// TODO: add delete API for when timeslot is deleted
-router.post("/manager/deleteSlot", async (req, res) => {
+router.post("/manager/deleteSlot", jsonParser, async (req, res) => {
   const dayNumber = req.body.dayNumber;
   const slotIndex = parseInt(req.body.slotNumber) + 1; // 0 indexed
+  console.log(`dayNumber is ${dayNumber}`);
   const slotString = `slot${slotIndex}`;
   const dayToUpdate = await dayProvider.getDay(dayNumber);
   

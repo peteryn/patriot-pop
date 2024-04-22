@@ -79,6 +79,38 @@ document.addEventListener("DOMContentLoaded", () => {
         "http://localhost:8080/manager/deleteSlot"
       );
       removeForm.setAttribute("method", "POST");
+      removeForm.addEventListener("submit", async (e) => {
+        const data = {
+          dayNumber: dayNumber,
+          slotNumber: index,
+        };
+        e.preventDefault();
+        if (confirm("Remove Assigned Slot?")) {
+          // removeForm.submit();
+          await fetch("/manager/deleteSlot", {
+            method: "POST",
+            mode: "cors", // no-cors, *cors, same-origin
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "same-origin", // include, *same-origin, omit
+            headers: {
+              "Content-Type": "application/json",
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: "follow", // manual, *follow, error
+            referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+          });
+
+          const containerId = `slot-${columnNumber}-${index + 1}`;
+          const container = document.getElementById(containerId);
+          container.innerHTML = "";
+          const path = window.location.pathname;
+          const page = path.split("/").pop();
+          if (page === "manager") {
+            populateAll();
+          }
+        }
+      });
 
       const removeBtn = document.createElement("input");
       removeBtn.type = "submit";
@@ -211,18 +243,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextDayBtn = document.getElementById("next-day-btn");
   nextDayBtn.addEventListener("click", () => {
     currentDayCount = setDates(++currentDayCount);
-    const expiresDate = calculateNextDayExpiry()
+    const expiresDate = calculateNextDayExpiry();
     document.cookie = `currentDayCount=${currentDayCount};expires=${expiresDate}`;
     // updateTimeTable(currentDayNumber);
-    populateAll();
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+    if (page === "manager") {
+      populateAll();
+    }
   });
   const prevDayBtn = document.getElementById("prev-day-btn");
   prevDayBtn.addEventListener("click", () => {
     currentDayCount = setDates(--currentDayCount);
-    const expiresDate = calculateNextDayExpiry()
+    const expiresDate = calculateNextDayExpiry();
     document.cookie = `currentDayCount=${currentDayCount};expires=${expiresDate}`;
     // updateTimeTable(currentDayNumber);
-    populateAll();
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+    if (page === "manager") {
+      populateAll();
+    }
   });
 
   // let user use arrow keys to navigate days
@@ -233,9 +273,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key == "ArrowRight") {
       currentDayCount = setDates(++currentDayCount);
     }
-    const expiresDate = calculateNextDayExpiry()
+    const expiresDate = calculateNextDayExpiry();
     document.cookie = `currentDayCount=${currentDayCount};expires=${expiresDate}`;
-    // populateAll();
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+    if (page === "manager") {
+      populateAll();
+    }
   });
 
   // let user enlarge dj names

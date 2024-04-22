@@ -28,11 +28,11 @@ header {
 }
 
 #producer-dj .song-box {
-    height: 26vh;
+    height: 22vh;
 }
 
 #notdj-song-box .song-box {
-    height: 26vh;
+    height: 22vh;
 }
 
 .report-section {
@@ -71,7 +71,7 @@ header {
     background-color: var(--bg-color);
     border: solid 2px white;
     border-radius: 8px;
-    margin-top: 15%;
+    margin-top: 10%;
     padding: 2em;
     text-align: center;
 }
