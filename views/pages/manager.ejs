@@ -44,7 +44,7 @@
   <div class="modal-box">
     <h2>Schedule DJ</h2>
     <div class="divide">
-      <form class="modal-form" method="POST" action="/manager/adddj">
+      <form id="modal-form" class="modal-form" method="POST" action="/manager/adddj">
         <select name="djs" id="dj-select" class="form-select">
           <% for (let i = 0; i < djs.length; i++) {%>
             <option value="<%= djs[i].name.toLowerCase() %>"><%= djs[i].name %></option>
@@ -125,4 +125,4 @@
     </form>
   </div>
 </div>
-<script src="/js/modal.js"></script>
+<!-- <script src="/js/modal.js"></script> -->

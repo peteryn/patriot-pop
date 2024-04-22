@@ -69,7 +69,6 @@ async function updateDay(dayNumber, updateData) {
   if (data == null) {
     addDay(updateData);
   } else {
-    console.log("here correct")
     try {
       let updatedDay = await Day.findOneAndUpdate(
         { dayNumber: dayNumber },

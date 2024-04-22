@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const cookieDict = getCookieDict();
   if (!cookieDict.hasOwnProperty("currentDayCount")) {
-    console.log("hello");
     document.cookie = `currentDayCount=${currentDayCount};expires=${expiresDate}`;
   }
 });

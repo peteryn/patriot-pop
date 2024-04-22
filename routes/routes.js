@@ -25,7 +25,6 @@ router.get("/api/day/:dayNumber", async (req, res) => {
 router.post("/manager/deleteSlot", jsonParser, async (req, res) => {
   const dayNumber = req.body.dayNumber;
   const slotIndex = parseInt(req.body.slotNumber) + 1; // 0 indexed
-  console.log(`dayNumber is ${dayNumber}`);
   const slotString = `slot${slotIndex}`;
   const dayToUpdate = await dayProvider.getDay(dayNumber);
   
@@ -60,7 +59,7 @@ router.get("/manager", async (req, res) => {
   });
 });
 
-router.post("/manager/adddj", async (req, res) => {
+router.post("/manager/adddj", jsonParser, async (req, res) => {
   const dayCount = Math.floor(req.body.djDate / (24 * 60 * 60 * 1000));
   const slot = req.body.djTimeslot;
 
@@ -78,7 +77,6 @@ router.post("/manager/adddj", async (req, res) => {
     };
     const updatedDay = oldDay;
     updatedDay[slot] = obj;
-    console.log(updatedDay);
     dayProvider.updateDay(dayCount, updatedDay);
     res.redirect("/manager");
   }

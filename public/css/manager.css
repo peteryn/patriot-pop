@@ -74,6 +74,19 @@ header {
     margin-top: 10%;
     padding: 2em;
     text-align: center;
+    position: relative;
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes slideIn {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes slideOut {
+    from {top:0; opacity:1}
+    to {top:-300pxx; opacity:0}
 }
 
 .modal-box h2 {
