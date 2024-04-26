@@ -116,6 +116,7 @@ function generateTimeslotCard(timeslot, columnNumber, index, dayNumber) {
     removeBtn.name = "delete";
     removeBtn.value = "Remove";
     removeBtn.id = "remove-dj-btn";
+    removeBtn.style.color = "#1E1E1E";
 
     const hiddenDayNumber = document.createElement("input");
     hiddenDayNumber.value = dayNumber;
