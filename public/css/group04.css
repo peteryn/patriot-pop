@@ -276,6 +276,29 @@ td {
     max-height: 30px;
 }
 
+.super_song_alt {
+    margin-bottom: 20px;
+}
+
+.super_song_alt .song-alt {
+    justify-content: space-between;
+    min-height: 10px;
+    margin-bottom: 10px;
+}
+
+.super_song_alt .image-container img {
+    height: 30px;
+}
+
+.super_song_alt .song-alt .right-of-text {
+    margin-left: auto;
+}
+
+
+
+
+
+
 .table-secondary .song-alt > .song-text {
     white-space: nowrap;
     text-overflow: ellipsis;
