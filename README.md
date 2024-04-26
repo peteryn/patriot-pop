@@ -12,4 +12,6 @@ cd models/json
 
 mongoimport --db patriotPop --collection day --file days.json --jsonArray
 mongoimport --db patriotPop --collection dj --file djs.json --jsonArray
+mongoimport --db patriotPop --collection song --file songs.json --jsonArray
+
 ```

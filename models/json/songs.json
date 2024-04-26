@@ -1,0 +1,31 @@
+[
+    {
+        "allSongs": [
+            {
+                "songTitle": "Karma",
+                "artist": "Ariadne",
+                "albumPictureName": "karma.png"
+            },
+            {
+                "songTitle": "Galactic",
+                "artist": "Natty Lou",
+                "albumPictureName": "galactic.png"
+            },
+            {
+                "songTitle": "apart",
+                "artist": "sumu",
+                "albumPictureName": "sumu.png"
+            },
+            {
+                "songTitle": "Set Me Free",
+                "artist": "T & Sugah x Primate",
+                "albumPictureName": "ncs.jpg"
+            },
+            {
+                "songTitle": "pretty afternoon",
+                "artist": "Andrah",
+                "albumPictureName": "pretty.png"
+            }
+        ]
+    }
+]

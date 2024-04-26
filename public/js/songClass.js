@@ -45,4 +45,16 @@ function capitalizeWords(words) {
     return words.join(" ");
 }
 
+function searchSongsByTitle(substring) {
+    const searchResults = [];
+    const query = substring.toLowerCase();
+
+    for (const slot in songsData) {
+        const matchedSongs = songsData[slot].filter(song => song.songTitle.toLowerCase().includes(query));
+        searchResults.push(...matchedSongs);
+    }
+
+    return searchResults;
+}
+
 export {Song, getNewSongs, capitalizeSongs}
