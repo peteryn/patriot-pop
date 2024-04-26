@@ -173,10 +173,34 @@ router.get("/add-test-songs", async (req, res) => {
 
 //Dj routes
 
+async function getDaysData() {
+  const dataPath = path.join(__dirname, '../models/json/days.json)');
+  const jsonData = await fs.readFile(dataPath, 'utf8');
+  return JSON.parse(jsonData);
+}
+
 router.get("/dj", async (req, res) => {
+  const searchQuery = req.query.search ? req.query.search.trim().toLowerCase() : '';
+  let foundSong = null;
+
+  if (searchQuery) {
+      const daysData = await getDaysData();
+      // Assuming daysData is an array of days with slots
+      for (let day of daysData) {
+          for (let slotKey in day) {
+              let slot = day[slotKey];
+              let songs = [...slot.producerAssignedSongs, ...slot.djPlayedSongs];
+              foundSong = songs.find(song => song.songTitle.toLowerCase() === searchQuery);
+              if (foundSong) break;
+          }
+          if (foundSong) break;
+      }
+  }
+
   const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
   const content = await ejs.renderFile("./views/pages/dj.ejs", {
-    timetable: timetable,
+      timetable: timetable,
+      foundSong: foundSong  // Pass this to the EJS template
   });
   res.render("partials/base", {
     pageTitle: "DJ",
@@ -186,15 +210,6 @@ router.get("/dj", async (req, res) => {
 });
 // const searchSongs = require('./path/to/searchSongs');
 
-router.get("/search", async (req, res) => {
-  try {
-    const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
-    const results = await searchSongs(req.query.search);
-    res.render("pages/dj", { searchResults: results, ...otherParams });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Error occurred during the search.");
-  }
-});
+
 
 module.exports = router;
