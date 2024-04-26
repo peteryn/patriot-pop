@@ -206,8 +206,37 @@ router.get("/dj", async (req, res) => {
     pageTitle: "DJ",
     content: content,
     activePage: "dj",
+    foundSong: foundSong 
   });
 });
-// const searchSongs = require('./path/to/searchSongs');
+router.post("/dj", async (req, res) => {
+
+  const { songTitle, artist } = req.body;
+  if ( !songTitle || !artist) {
+      return res.status(400).send("Missing required fields");
+  }
+  if (!/^[A-Za-z ]+$/.test(songTitle)) {
+    return res.status(400).send("Invalid song title");
+}
+  try {
+      let playlist = await Playlist.findOne({  });
+      if (!playlist) {
+          playlist = new Playlist({ songs: [] });
+      }
+      const isSongExists = playlist.songs.some(song => song.title === songTitle && song.artist === artist);
+      if (!isSongExists) {
+          playlist.songs.push({ title: songTitle, artist });
+          await playlist.save();
+          res.status(201).send('Song added to playlist.');
+      } else {
+          res.status(409).send('Song already exists in the playlist.');
+      }
+  } catch (error) {
+     // console.error('Failed to add song to playlist:', error);
+      //res.status(500).send('Server error');
+  }
+});
+
+
 
 module.exports = router;
