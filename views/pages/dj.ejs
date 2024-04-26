@@ -16,7 +16,7 @@
                   <p>NCS</p>
                   
               </div>
-              <div class="add-icon">
+              <div class="add-icon" onclick="addToPlaylist('Pretty Afternoon', 'Andrah')">
                   <img src="../images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
               </div>
               <div class="success-popup" style="display: none;">
@@ -33,7 +33,7 @@
                 <img src="/images/sumu.png" alt="Song Cover"class="album-icon">
             </div>
             <div class="song-details">
-              <p class="now-playing">Now Playing</p>
+              <p class=""></p>
                 <h2>Karma</h2>
                 <p>Ariadne</p>
                 <p>NCS</p>
@@ -55,11 +55,11 @@
               <img src="/images/galactic.png" alt="Song Cover"class="album-icon">
           </div>
           <div class="song-details">
-            <p class="now-playing">Now Playing</p>
+            <p class=""></p>
               <h2>Galatic</h2>
               <p>Natty Lou</p>
               <p>NCS</p>
-              <p class="now-playing">Now Playing</p>
+              <p class=""></p>
           </div>
           <div class="add-icon" onclick="addToPlaylist('Galatic', 'Natty Lou')">
               <img src="/images/plus-icon.png" alt="Add to Playlist"class="plus-icon">
@@ -74,13 +74,13 @@
 <div class="panel-header">
     <div class="song-actions">
         <div class="song-cover">
-            <img src="/images/song-cover-icon.png" alt="Song Cover"class="album-icon">
+            <img src="/images/feeling.png" alt="Song Cover"class="album-icon">
         </div>
         <div class="song-details">
-          <p class="now-playing">Now Playing</p>
-            <h2>Song 4</h2>
-            <p>Artist 4</p>
-            <p>Album 4</p>
+          <p class="now-playing"></p>
+            <h2>Feeling</h2>
+            <p>NCS</p>
+            <p>NCS</p>
             
         </div>
         <div class="add-icon"onclick="addToPlaylist('Example Song', 'Example Artist')">
@@ -103,6 +103,20 @@
       <img src="/images/searchIcon.png" alt="Search" />
     </button>
   </form>
+  <div class="search-results">
+    <% if (foundSong) { %>
+      <div class="found-song">
+        <img src="/images/song-cover/<%= foundSong.cover %>" alt="Cover Image" class="song-cover-img">
+        <div class="song-info">
+          <h3><%= foundSong.songTitle %></h3>
+          <p>Artist: <%= foundSong.artist %></p>
+          <button onclick="addToPlaylist('<%= foundSong.songTitle %>', '<%= foundSong.artist %>')">Add to Playlist</button>
+        </div>
+      </div>
+    <% } else { %>
+      <p></p>
+    <% } %>
+  </div>
 
 <div class="dj-profile">
   <img src="../images/profile.png" alt="DJ Profile Picture">
@@ -162,7 +176,31 @@
 <script src="js/DJsongAdd.js"></script>
 <script>
   function addToPlaylist(songTitle, artist) {
-      console.log(`Adding ${decodeURIComponent(songTitle)} by ${decodeURIComponent(artist)} to the playlist...`);
-   
-  }
+    console.log("Added", songTitle, "By", artist);
+    fetch('/dj', { 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            
+            songTitle: decodeURIComponent(songTitle),
+            artist: decodeURIComponent(artist)
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to add song to playlist');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data); 
+        alert(data); 
+    })
+    .catch(error => {
+       // console.error('Error adding song to playlist:', error);
+       // alert('Error adding song to playlist: ' + error.message); // Displaying the error message
+    });
+}
 </script>

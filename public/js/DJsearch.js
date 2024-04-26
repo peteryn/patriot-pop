@@ -3,10 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var searchBar = document.getElementById('search-bar');
     var searchForm = document.getElementById('search-form');
     
-    clearBtn.addEventListener('click', function() {
-        searchBar.value = '';
-        searchResults.innerHTML = '';
-    });
+   
     searchBar.addEventListener('keydown', function(event) {
         console.log(`Key pressed in search bar: ${event.key}`);
     });
