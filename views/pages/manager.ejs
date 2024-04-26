@@ -20,8 +20,6 @@
       <div id="notdj-song-box" class="song-box scroll-style">
       </div>
     </div>
-    <!-- <h2>Double click DJ name to enlarge</h2>
-    <h2>Use left and right arrow keys to navigate days</h2> -->
   </section>
   <section id="right">
     <div class="top-menu">
@@ -30,12 +28,13 @@
         <h2 id="date-range">Feb 10 - Feb 12</h2>
         <i id="next-day-btn" class="fa-solid fa-caret-right" style="padding-right: 0.5em"></i>
       </div>
+      <div id="go-to-today">
+        <!-- <button type="button" id="today" class="add-btn">Today</button> -->
+        <a href="/manager" id="today" class="add-btn">Today</a>
+      </div>
       <div class="add-btn-div">
         <button type="button" id="schedule-dj-btn" class="add-btn">Schedule DJ</button>
       </div>
-      <!-- <div class="add-btn-div">
-        <button type="button" id="add-dj-btn" class="add-btn">Add DJ</button>
-      </div> -->
     </div>
     <%- timetable %>
   </section>
@@ -59,9 +58,6 @@
           <option value="purple">Purple</option>
         </select>
         <select name="djDate" id="dj-date" class="form-select">
-          <!-- <option value="feb10">Feb 10</option>
-            <option value="feb11">Feb 11</option>
-            <option value="feb12">Feb 12</option> -->
         </select>
         <select name="djTimeslot" id="dj-timeslot" class="form-select">
           <option value="slot1">12AM - 8AM</option>

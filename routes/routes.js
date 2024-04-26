@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const ejs = require("ejs");
 const fs = require("fs");
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 
 const dayProvider = require("../models/dayProvider");
 const djProvider = require("../models/djProvider");
