@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= pageTitle %></title>
   <link rel="stylesheet" href="/css/group04.css">
-  <link rel="stylesheet" href="/css/producer.css">
   <link rel="stylesheet" href="/css/manager.css">
   <link rel="stylesheet" href="/css/dj.css">
 
@@ -19,6 +18,10 @@
   <script src="/js/modal.js" type="module"></script>
   <% if (activePage === 'manager') { %>
     <script src="/js/goToToday.js" type="module"></script>
+  <% } %>
+  <% if (activePage === 'producer') { %>
+    <script src="/js/goToToday.js" type="module"></script>
+    <link rel="stylesheet" href="/css/producer.css">
   <% } %>
 </head>
 <body>
