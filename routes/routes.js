@@ -113,7 +113,7 @@ router.get("/producer", async (req, res) => {
 
 //TODO: change the thing below
 
-router.post("/producer/submit", jsonParser, async (req, res) => {
+router.post("/producer/submit", async (req, res) => {
   const dayNumber = parseInt(req.body.dayNumber);
   const slot = req.body.timeslot;
 
@@ -123,8 +123,7 @@ router.post("/producer/submit", jsonParser, async (req, res) => {
     // If a DJ is already assigned to this slot, don't overwrite, redirect or handle as needed
     res.status(409).send("DJ already assigned to this slot for the day.");
   } else {
-    const djName =
-      req.body.djName.charAt(0).toUpperCase() + req.body.djName.slice(1); // Format DJ name to start with uppercase
+    const djName = req.body.djs.charAt(0).toUpperCase() + req.body.djs.slice(1); // Format DJ name to start with uppercase
     const color = req.body.color; // Color from form input
 
     // Create the slot object based on the provided data
