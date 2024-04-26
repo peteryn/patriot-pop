@@ -6,6 +6,8 @@ const fs = require("fs");
 var bodyParser = require('body-parser')
 
 const dayProvider = require("../models/dayProvider");
+const songsProvider = require("../models/songsProvider");
+const song = require("../models/songs");
 const djProvider = require("../models/djProvider");
 const reportHelper = require("./helper/report");
 const day = require("../models/day");
@@ -84,7 +86,24 @@ router.post("/manager/adddj", jsonParser, async (req, res) => {
 
 // Producer Routes
 router.get("/producer", async (req, res) => {
-  const content = await ejs.renderFile("./views/pages/producer.ejs");
+  // console.log("Accessing /producer route");  // This should log when the route is accessed
+  // try {
+  //   const songs = await songsProvider.getAllSongs();
+  //   console.log("Fetched Songs:", songs);
+  // } catch (error) {
+  //   console.error('Error loading producer page:', error);
+  //   res.sendStatus(500);
+  // }
+  const songs = await songsProvider.getAllSongs();
+  console.log("Fetched Songs:", songs);
+
+  const djs = await djProvider.getAllDjs();
+  const timetable = await ejs.renderFile("./views/partials/timetable.ejs");
+  const content = await ejs.renderFile("./views/pages/producer.ejs", {
+    djs: djs,
+    songs: songs,
+    timetable: timetable,
+  });
   res.render("partials/base", {
     pageTitle: "Producer",
     content: content,
@@ -92,9 +111,65 @@ router.get("/producer", async (req, res) => {
   });
 });
 
-router.post("/producer/adddj", (req, res) => {
-  res.redirect("/producer");
+
+//TODO: change the thing below
+
+router.post("/producer/submit", jsonParser, async (req, res) => {
+  const dayNumber = parseInt(req.body.dayNumber);
+  const slot = req.body.timeslot; 
+
+  const currentDay = await dayProvider.getDay(dayNumber);
+  
+  if (currentDay && currentDay[slot] && currentDay[slot].dj) {
+      // If a DJ is already assigned to this slot, don't overwrite, redirect or handle as needed
+      res.status(409).send("DJ already assigned to this slot for the day.");
+  } else {
+      const djName = req.body.djName.charAt(0).toUpperCase() + req.body.djName.slice(1); // Format DJ name to start with uppercase
+      const color = req.body.color; // Color from form input
+
+      // Create the slot object based on the provided data
+      const slotData = {
+          dj: djName,
+          color: color,
+          producerAssignedSongs: [], // Empty initially, or modify as needed
+          djPlayedSongs: [] // Empty initially, or modify as needed
+      };
+
+      const updateData = { [slot]: slotData };
+
+      // If the day does not exist, it initializes it with the necessary slots
+      if (!currentDay) {
+          await dayProvider.addDay({ dayNumber: dayNumber, [slot]: slotData });
+      } else {
+          // Update the existing day with new slot data
+          await dayProvider.updateDay(dayNumber, updateData);
+      }
+      
+      res.redirect("/producer"); // Redirect to the producer page or handle differently
+  }
 });
+
+module.exports = router;
+
+
+//TODO: change the thing on top
+
+
+
+
+
+// Temporary route or script to add some songs
+router.get("/add-test-songs", async (req, res) => {
+  try {
+    await songProvider.addSong({ title: "Test Song", artist: "Test Artist", albumPictureName: "test.png" });
+    res.send("Test song added successfully!");
+  } catch (error) {
+    console.error('Error adding test song:', error);
+    res.sendStatus(500);
+  }
+});
+
+
 
 //Dj routes
 
