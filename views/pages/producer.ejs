@@ -82,214 +82,167 @@
           </div> -->
 
           <div class="search-results-container">
-            <div class="long-box">
-               
-            
 
-             <div class="song-alt">
-              <div class="image-container">
+            <div class = "super_song_alt">
+              <div class="song-alt">
+                <div class="image-container">
                   <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-
-            <div class="song-alt">
-              <div class="image-container">
-                  <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-
-            <div class="song-alt">
-              <div class="image-container">
-                  <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-            <div class="song-alt">
-              <div class="image-container">
-                  <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-
-            <div class="song-alt">
-              <div class="image-container">
-                  <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-
-            <div class="song-alt">
-              <div class="image-container">
-                  <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-            <div class="song-alt">
-              <div class="image-container">
-                  <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-            <div class="song-alt">
-              <div class="image-container">
-                  <img src="../images/ncs.jpg" alt=""> 
-                  <img src="../images/hamburger_menu.png" alt="" class="right-of-first-image"> 
-              </div>
-              <div class="song-text">
-                  <p>T & Sugah- Set Me Free</p>
-              </div>
-              <div class="image-container">
-                  <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">  
-              </div>
-            </div>
-
-  
-        
-            </div>
-          </div>
-
-
-          <form id="djSelectionForm" onsubmit="return validateDJSelection()" method="post" action="/producer/submit">
-            <div class="form-container">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="djSelection">Select DJ:</label>
-                        <select name="djs" id="dj-select" class="form-select">
-                          <% for (let i = 0; i < djs.length; i++) {%>
-                              <option value="<%= djs[i].name.toLowerCase() %>"><%= djs[i].name %></option>
-                          <% } %>
-                      </select>
-                        <!-- <select name="djSelection" id="djSelection">
-                            <option value="">Select DJ</option>
-                            <option value="djBlue">DJ Blue</option>
-                            <option value="djGray">DJ Gray</option>
-                        </select> -->
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="timeslotSelection">Select Timeslot:</label>
-                        <select name="timeslotSelection" id="timeslotSelection">
-                            <option value="">Select Timeslot</option>
-                            <option value="morning">Morning</option>
-                            <option value="afternoon">Afternoon</option>
-                            <option value="evening">Evening</option>
-                        </select>
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="dayInput">Day Number:</label>
-                        <input type="text" id="dayInput" name="dayInput" placeholder="Enter Day Number"/>
-                    </div>
-        
-                    <div class="form-submit">
-                        <button type="submit">Add</button>
-                    </div>
+                     
                 </div>
+                <div class="song-text">
+                    <p>T & Sugah- Set Me Free</p>
+                </div>
+                <div class="image-container">
+                    <!-- <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">   -->
+                </div>
+              </div>
             </div>
-        </form>
-        
-        
-        
-        
-        <script>
-            function validateDJSelection() {
-                var djSelectionElement = document.getElementById("djSelection");
-                var djSelectionValue = djSelectionElement.value;
-        
-                if (djSelectionValue === "") {
-                    alert("Please select a DJ.");
-                    djSelectionElement.focus();
-                    return false; // Prevent form submission
-                }else{
-        
-                alert("DJ Selected: " + djSelectionElement.options[djSelectionElement.selectedIndex].text);
-                return true; // Allow form submission
-                }
-            }
-        
-            function addTime() {
-                var timeInput = document.getElementById("timeInput").value;
-                var timeFormatRegex = /^\d{1,2}:\d{2}$/;
-                if (timeInput === ""){
-                  alert("Please input a time");
-                } else if (!timeFormatRegex.test(timeInput)) {
-                  alert("Invalid format. Please use HH:MM format.");                  
-                }else{
-                alert("Time Added: " + timeInput);
-              }
-            }
 
-                    
-            let DJ_gary = {
-                name: "Gray Boots",
-                showName: "gray ocean",
-                yearsExperience: 10,
-                color: "##808080" //gray in hex
-            };
+            <div class = "super_song_alt">
+              <div class="song-alt">
+                <div class="image-container">
+                  <img src="../images/ncs.jpg" alt=""> 
+                     
+                </div>
+                <div class="song-text">
+                    <p>T & Sugah- Set Me Free</p>
+                </div>
+                <div class="image-container">
+                    <!-- <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">   -->
+                </div>
+              </div>
+            </div>
 
-            let DJ_blue = {
-                name: "Blue Shoes",
-                showName: "blue sky",
-                yearsExperience: 10,
-                color: "#008000" //blue in hex
-            };
 
-  
-            function removeSong(element) {
-              if (confirm("Remove this song?")) {
-                element.closest('.song-alt').remove();
-              }
-            }
-                    
- 
-        </script>
+            <div class = "super_song_alt">
+              <div class="song-alt">
+                <div class="image-container">
+                  <img src="../images/ncs.jpg" alt=""> 
+                     
+                </div>
+                <div class="song-text">
+                    <p>T & Sugah- Set Me Free</p>
+                </div>
+                <div class="image-container">
+                    <!-- <img src="../images/delete_button.png" alt="" class="right-of-text" onclick="removeSong(this)">   -->
+                </div>
+              </div>
+            </div>
+
+
+
+            
+        
+            </div>
+          </div>
+
+
+          
         
         
           </div>
+
+
+
+
+
+          <div>
+            <form id="djSelectionForm" onsubmit="return validateDJSelection()" method="post" action="/producer/adddj">
+              <div class="form-container">
+                  <div class="form-row">
+                      <div class="form-group">
+                          <label for="djSelection">Select DJ:</label>
+                          <select name="djs" id="dj-select" class="form-select">
+                            <% for (let i = 0; i < djs.length; i++) {%>
+                                <option value="<%= djs[i].name.toLowerCase() %>"><%= djs[i].name %></option>
+                            <% } %>
+                        </select>
+                          <!-- <select name="djSelection" id="djSelection">
+                              <option value="">Select DJ</option>
+                              <option value="djBlue">DJ Blue</option>
+                              <option value="djGray">DJ Gray</option>
+                          </select> -->
+                      </div>
+          
+                      <div class="form-group">
+                          <label for="timeslotSelection">Select Timeslot:</label>
+                          <select name="timeslotSelection" id="timeslotSelection">
+                              <option value="">Select Timeslot</option>
+                              <option value="morning">Morning</option>
+                              <option value="afternoon">Afternoon</option>
+                              <option value="evening">Evening</option>
+                          </select>
+                      </div>
+          
+                      <div class="form-group">
+                          <label for="dayInput">Day Number:</label>
+                          <input type="text" id="dayInput" name="dayInput" placeholder="Enter Day Number"/>
+                      </div>
+          
+                      <div class="form-submit">
+                          <button type="submit">Add</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+          
+          
+          
+          
+          <script>
+              function validateDJSelection() {
+                  var djSelectionElement = document.getElementById("djSelection");
+                  var djSelectionValue = djSelectionElement.value;
+          
+                  if (djSelectionValue === "") {
+                      alert("Please select a DJ.");
+                      djSelectionElement.focus();
+                      return false; // Prevent form submission
+                  }else{
+          
+                  alert("DJ Selected: " + djSelectionElement.options[djSelectionElement.selectedIndex].text);
+                  return true; // Allow form submission
+                  }
+              }
+          
+              function addTime() {
+                  var timeInput = document.getElementById("timeInput").value;
+                  var timeFormatRegex = /^\d{1,2}:\d{2}$/;
+                  if (timeInput === ""){
+                    alert("Please input a time");
+                  } else if (!timeFormatRegex.test(timeInput)) {
+                    alert("Invalid format. Please use HH:MM format.");                  
+                  }else{
+                  alert("Time Added: " + timeInput);
+                }
+              }
+  
+                      
+              let DJ_gary = {
+                  name: "Gray Boots",
+                  showName: "gray ocean",
+                  yearsExperience: 10,
+                  color: "##808080" //gray in hex
+              };
+  
+              let DJ_blue = {
+                  name: "Blue Shoes",
+                  showName: "blue sky",
+                  yearsExperience: 10,
+                  color: "#008000" //blue in hex
+              };
+  
+    
+              function removeSong(element) {
+                if (confirm("Remove this song?")) {
+                  element.closest('.song-alt').remove();
+                }
+              }
+   
+          </script>
+          </div>
+
+
         </div>
       </section>
 
