@@ -11,7 +11,7 @@
 
 
       <div class="search-results-container">
-        <h4 style="font-size: 1em; color: #27ae20;">Suggestions:</h4>
+        <h4 style="font-size: 1em; color: #27ae20;">Search Results:</h4>
         <div class="long-box">
             <ul id="songResults">
                 <% if (songs && songs.length) { %>
@@ -26,7 +26,7 @@
     </div>
     
       
-
+    <script src="js/producer_add.js"></script>
       <script>
         (function() {
             const songsData = JSON.parse('<%- JSON.stringify(songs) %>');
@@ -147,7 +147,8 @@
 
 
           <div>
-            <form id="djSelectionForm" onsubmit="return validateDJSelection()" method="post" action="/producer/adddj">
+            <form id="djSelectionForm"></form>
+            <!-- <form id="djSelectionForm" onsubmit="return validateDJSelection()" method="post" action="/producer/adddj"> -->
               <div class="form-container">
                   <div class="form-row">
                       <div class="form-group">
@@ -178,10 +179,16 @@
                           <label for="dayInput">Day Number:</label>
                           <input type="text" id="dayInput" name="dayInput" placeholder="Enter Day Number"/>
                       </div>
-          
-                      <div class="form-submit">
-                          <button type="submit">Add</button>
+                      <div class="panel">
+                        <div class="form-submit"onclick="">
+                            <button type="submit">Add</button>
+                        </div>
+                        <div class="success-popup" style="display: none;">
+                          Success! The item was added.
+                          <button class="close-popup">Close</button>
+                        </div>
                       </div>
+
                   </div>
               </div>
           </form>
@@ -244,6 +251,7 @@
 
 
         </div>
+      
       </section>
 
 
@@ -258,6 +266,10 @@
             
             <h2 id="date-range">Feb 10 - Feb 12</h2>
             <i id="next-day-btn" class="fa-solid fa-caret-right" style="padding-right: 0.5em"></i>
+          </div>
+          <div id="go-to-today">
+            
+            
           </div>
         </div>
         <%- timetable %>

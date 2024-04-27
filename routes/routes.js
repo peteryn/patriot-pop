@@ -111,7 +111,6 @@ router.get("/producer", async (req, res) => {
   });
 });
 
-//TODO: change the thing below
 
 router.post("/producer/submit", async (req, res) => {
   const dayNumber = parseInt(req.body.dayNumber);
@@ -120,37 +119,33 @@ router.post("/producer/submit", async (req, res) => {
   const currentDay = await dayProvider.getDay(dayNumber);
 
   if (currentDay && currentDay[slot] && currentDay[slot].dj) {
-    // If a DJ is already assigned to this slot, don't overwrite, redirect or handle as needed
     res.status(409).send("DJ already assigned to this slot for the day.");
   } else {
-    const djName = req.body.djs.charAt(0).toUpperCase() + req.body.djs.slice(1); // Format DJ name to start with uppercase
-    const color = req.body.color; // Color from form input
+    const djName = req.body.djs.charAt(0).toUpperCase() + req.body.djs.slice(1);
+    const color = req.body.color;
 
-    // Create the slot object based on the provided data
     const slotData = {
       dj: djName,
       color: color,
-      producerAssignedSongs: [], // Empty initially, or modify as needed
-      djPlayedSongs: [], // Empty initially, or modify as needed
+      producerAssignedSongs: [], 
+      djPlayedSongs: [],
     };
 
     const updateData = { [slot]: slotData };
 
-    // If the day does not exist, it initializes it with the necessary slots
     if (!currentDay) {
       await dayProvider.addDay({ dayNumber: dayNumber, [slot]: slotData });
     } else {
-      // Update the existing day with new slot data
       await dayProvider.updateDay(dayNumber, updateData);
     }
 
-    res.redirect("/producer"); // Redirect to the producer page or handle differently
+    res.redirect("/producer");
   }
 });
 
 module.exports = router;
 
-//TODO: change the thing on top
+
 
 // Temporary route or script to add some songs
 router.get("/add-test-songs", async (req, res) => {
