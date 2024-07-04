@@ -160,6 +160,11 @@
                     "songTitle": "Karma",
                     "artist": "Ariadne",
                     "albumPictureName": "karma.png"
+                },
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
                 }
             ],
             "djPlayedSongs": [
@@ -252,6 +257,11 @@
             "dj": "Jessica",
             "color": "none",
             "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
                 {
                     "songTitle": "Karma",
                     "artist": "Ariadne",
@@ -741,6 +751,11 @@
             "dj": "Jessica",
             "color": "none",
             "producerAssignedSongs": [
+                {
+                    "songTitle": "Karma",
+                    "artist": "Ariadne",
+                    "albumPictureName": "karma.png"
+                },
                 {
                     "songTitle": "Karma",
                     "artist": "Ariadne",
